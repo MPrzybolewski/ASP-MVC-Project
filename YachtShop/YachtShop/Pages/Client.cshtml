@@ -1,7 +1,44 @@
 ﻿@page
 @model YachtShop.Pages.ClientModel
 @{
-    <label>@Model.WelcomeString</label>
+    <div class="container">
+        <h3>Add Client</h3>
+        <hr/>
+        <br/>
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="Client.FirstName"></label>
+                    <input asp-for="Client.FirstName" class="form-control"/>
+                    <span class="alert-danger" asp-validation-for="Client.FirstName"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="Client.SecondName"></label>
+                    <input asp-for="Client.SecondName" class="form-control"/>
+                    <span class="alert-danger" asp-validation-for="Client.SecondName"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="Client.PhoneNumber"></label>
+                    <input asp-for="Client.PhoneNumber" class="form-control" />
+                    <span class="alert-danger" asp-validation-for="Client.PhoneNumber"></span>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="Client.Email"></label>
+                    <input asp-for="Client.Email" class="form-control" />
+                    <span class="alert-danger" asp-validation-for="Client.Email"></span>
+                </div>
+            </div> 
+            <br />  
+            <input type="submit" value="Save" class="btn btn-primary" />  
+            <a class="btn btn-default" href="/allcustomer">Cancel</a>  
+        </form>
+    </div>   
 }
 
 <h2>Client</h2>
