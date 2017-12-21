@@ -8,16 +8,26 @@ namespace YachtShop.Models
 {
     public class Seller
     {
-        public int Id { get; set; }
+        public int SellerId { get; set; }
         [Required(ErrorMessage = "Enter First Name")]   
         public string FirstName { get; set; }
         [Required(ErrorMessage = "Enter Second Name")]
         public string SecondName { get; set; }
         [Required(ErrorMessage = "Enter Salary")]
-        public double Salary { get; set; }
+        public decimal Salary { get; set; }
         [Required(ErrorMessage = "Enter Phone Number")]
         public string PhoneNumber { get; set; }
         [Required(ErrorMessage = "Enter Email")]
         public string Email { get; set; }
+
+        public ICollection<Purchase> Purchases { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + SecondName;
+            }
+        }
     }
 }

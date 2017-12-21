@@ -7,7 +7,12 @@ namespace YachtShop.Models
 {
     public class Yacht
     {
-        public int Id { get; set; }
+        public int YachtId { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public string Description { get; set; }
+
+        public ICollection<Purchase> Purchases { get; set; }
 
     }
 }
