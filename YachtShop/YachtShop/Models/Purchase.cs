@@ -7,10 +7,10 @@ namespace YachtShop.Models
 {
     public class Purchase
     {
-        public int PurchaseId { get; set; }
-        public int ClientId { get; set; }
-        public int SellerId { get; set; }
-        public int YachtId { get; set; }
+        public string PurchaseId { get; set; }
+        public string ClientId { get; set; }
+        public string SellerId { get; set; }
+        public string YachtId { get; set; }
         public DateTime PurchaseDate { get; set; }
 
         public Client Client { get; set; }

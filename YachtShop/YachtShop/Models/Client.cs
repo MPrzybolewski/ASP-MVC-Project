@@ -8,7 +8,7 @@ namespace YachtShop.Models
 {
     public class Client
     {
-        public int ClientId { get; set; }
+        public string ClientId { get; set; }
         [Required(ErrorMessage = "Enter First Name")]
         public string FirstName { get; set; }
         [Required(ErrorMessage = "Enter Second Name")]

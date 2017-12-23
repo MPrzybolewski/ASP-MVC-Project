@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
@@ -13,12 +12,11 @@ namespace YachtShop.Data.Migrations
                 name: "Purchases",
                 columns: table => new
                 {
-                    PurchaseId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ClientId = table.Column<int>(nullable: false),
+                    PurchaseId = table.Column<string>(nullable: false),
+                    ClientId = table.Column<string>(nullable: true),
                     PurchaseDate = table.Column<DateTime>(nullable: false),
-                    SellerId = table.Column<int>(nullable: false),
-                    YachtId = table.Column<int>(nullable: false)
+                    SellerId = table.Column<string>(nullable: true),
+                    YachtId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -28,19 +26,19 @@ namespace YachtShop.Data.Migrations
                         column: x => x.ClientId,
                         principalTable: "Clients",
                         principalColumn: "ClientId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Purchases_Sellers_SellerId",
                         column: x => x.SellerId,
                         principalTable: "Sellers",
                         principalColumn: "SellerId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Purchases_Yachts_YachtId",
                         column: x => x.YachtId,
                         principalTable: "Yachts",
                         principalColumn: "YachtId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

@@ -8,7 +8,7 @@ namespace YachtShop.Models
 {
     public class Seller
     {
-        public int SellerId { get; set; }
+        public string SellerId { get; set; }
         [Required(ErrorMessage = "Enter First Name")]
         public string FirstName { get; set; }
         [Required(ErrorMessage = "Enter Second Name")]

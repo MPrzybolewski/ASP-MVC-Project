@@ -11,7 +11,7 @@ using YachtShop.Data;
 namespace YachtShop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20171223141918_AddSellerModel")]
+    [Migration("20171223144922_AddSellerModel")]
     partial class AddSellerModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -182,7 +182,7 @@ namespace YachtShop.Data.Migrations
 
             modelBuilder.Entity("YachtShop.Models.Client", b =>
                 {
-                    b.Property<int>("ClientId")
+                    b.Property<string>("ClientId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email")
@@ -204,7 +204,7 @@ namespace YachtShop.Data.Migrations
 
             modelBuilder.Entity("YachtShop.Models.Seller", b =>
                 {
-                    b.Property<int>("SellerId")
+                    b.Property<string>("SellerId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email")

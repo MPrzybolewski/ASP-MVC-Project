@@ -181,7 +181,7 @@ namespace YachtShop.Data.Migrations
 
             modelBuilder.Entity("YachtShop.Models.Client", b =>
                 {
-                    b.Property<int>("ClientId")
+                    b.Property<string>("ClientId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email")
@@ -203,16 +203,16 @@ namespace YachtShop.Data.Migrations
 
             modelBuilder.Entity("YachtShop.Models.Purchase", b =>
                 {
-                    b.Property<int>("PurchaseId")
+                    b.Property<string>("PurchaseId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ClientId");
+                    b.Property<string>("ClientId");
 
                     b.Property<DateTime>("PurchaseDate");
 
-                    b.Property<int>("SellerId");
+                    b.Property<string>("SellerId");
 
-                    b.Property<int>("YachtId");
+                    b.Property<string>("YachtId");
 
                     b.HasKey("PurchaseId");
 
@@ -227,7 +227,7 @@ namespace YachtShop.Data.Migrations
 
             modelBuilder.Entity("YachtShop.Models.Seller", b =>
                 {
-                    b.Property<int>("SellerId")
+                    b.Property<string>("SellerId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email")
@@ -251,7 +251,7 @@ namespace YachtShop.Data.Migrations
 
             modelBuilder.Entity("YachtShop.Models.Yacht", b =>
                 {
-                    b.Property<int>("YachtId")
+                    b.Property<string>("YachtId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Description");
@@ -314,18 +314,15 @@ namespace YachtShop.Data.Migrations
                 {
                     b.HasOne("YachtShop.Models.Client", "Client")
                         .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ClientId");
 
                     b.HasOne("YachtShop.Models.Seller", "Seller")
                         .WithMany()
-                        .HasForeignKey("SellerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("SellerId");
 
                     b.HasOne("YachtShop.Models.Yacht", "Yacht")
                         .WithMany()
-                        .HasForeignKey("YachtId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("YachtId");
                 });
 #pragma warning restore 612, 618
         }

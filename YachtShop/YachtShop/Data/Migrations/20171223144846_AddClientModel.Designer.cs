@@ -11,8 +11,8 @@ using YachtShop.Data;
 namespace YachtShop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20171223142052_AddYachtModel")]
-    partial class AddYachtModel
+    [Migration("20171223144846_AddClientModel")]
+    partial class AddClientModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -182,7 +182,7 @@ namespace YachtShop.Data.Migrations
 
             modelBuilder.Entity("YachtShop.Models.Client", b =>
                 {
-                    b.Property<int>("ClientId")
+                    b.Property<string>("ClientId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Email")
@@ -200,46 +200,6 @@ namespace YachtShop.Data.Migrations
                     b.HasKey("ClientId");
 
                     b.ToTable("Clients");
-                });
-
-            modelBuilder.Entity("YachtShop.Models.Seller", b =>
-                {
-                    b.Property<int>("SellerId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Email")
-                        .IsRequired();
-
-                    b.Property<string>("FirstName")
-                        .IsRequired();
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired();
-
-                    b.Property<decimal>("Salary");
-
-                    b.Property<string>("SecondName")
-                        .IsRequired();
-
-                    b.HasKey("SellerId");
-
-                    b.ToTable("Sellers");
-                });
-
-            modelBuilder.Entity("YachtShop.Models.Yacht", b =>
-                {
-                    b.Property<int>("YachtId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Description");
-
-                    b.Property<string>("Name");
-
-                    b.Property<decimal>("Price");
-
-                    b.HasKey("YachtId");
-
-                    b.ToTable("Yachts");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
