@@ -12,6 +12,9 @@ namespace YachtShop.Data
     {
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Seller> Sellers { get; set; }
+        public virtual DbSet<Yacht> Yachts { get; set; }
+        
+
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

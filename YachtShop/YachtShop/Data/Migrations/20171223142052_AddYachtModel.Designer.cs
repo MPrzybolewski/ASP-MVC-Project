@@ -11,9 +11,10 @@ using YachtShop.Data;
 namespace YachtShop.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171223142052_AddYachtModel")]
+    partial class AddYachtModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -200,7 +201,7 @@ namespace YachtShop.Data.Migrations
 
                     b.ToTable("Clients");
                 });
-         
+
             modelBuilder.Entity("YachtShop.Models.Seller", b =>
                 {
                     b.Property<int>("SellerId")
