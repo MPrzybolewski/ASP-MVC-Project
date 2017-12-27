@@ -14,6 +14,7 @@ namespace YachtShop.Data
         public virtual DbSet<Seller> Sellers { get; set; }
         public virtual DbSet<Yacht> Yachts { get; set; }
         public virtual DbSet<Purchase> Purchases { get; set; }
+        public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
          
 
 
