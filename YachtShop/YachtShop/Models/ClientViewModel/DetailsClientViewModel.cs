@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace YachtShop.Models.ClientViewModel
 {
-    public class DetailClientViewModel
+    public class DetailsClientViewModel
     {
         public string ClientId { get; set; }
         public string FirstName { get; set; }
