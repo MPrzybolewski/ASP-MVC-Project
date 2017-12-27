@@ -44,7 +44,6 @@ namespace YachtShop
                 .AddDefaultTokenProviders();
 
             services.AddRouting(options => options.LowercaseUrls = true);
-            services.AddAutoMapper();
             services.AddMvc();
         }
 

@@ -1,4 +1,4 @@
-﻿@model YachtShop.Models.ClientViewModel.EditClientViewModel
+﻿@model YachtShop.Models.Client
 
 @{
     ViewData["Title"] = "Edit";
@@ -44,6 +44,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
