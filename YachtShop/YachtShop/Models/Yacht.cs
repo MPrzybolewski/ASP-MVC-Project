@@ -12,5 +12,6 @@ namespace YachtShop.Models
         public decimal Price { get; set; }
         public string Description { get; set; }
 
+        public ICollection<Purchase> Purchases { get; set; }
     }
 }

@@ -17,5 +17,9 @@ namespace YachtShop.Models
         public string PhoneNumber { get; set; }
         [Required(ErrorMessage = "Enter Email")]
         public string Email { get; set; }
+
+        public ICollection<Purchase> Purchases { get; set; }
+
+
     }
 }
