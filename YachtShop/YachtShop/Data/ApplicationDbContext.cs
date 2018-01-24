@@ -15,7 +15,6 @@ namespace YachtShop.Data
         public virtual DbSet<Yacht> Yachts { get; set; }
         public virtual DbSet<Purchase> Purchases { get; set; }
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
-         
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -30,5 +29,6 @@ namespace YachtShop.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+        
     }
 }

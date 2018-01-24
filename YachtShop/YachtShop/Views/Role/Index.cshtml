@@ -1,0 +1,36 @@
+﻿@model IEnumerable<YachtShop.Models.RoleViewModels.RoleViewModel>
+@{
+    ViewData["Title"] = "Role";
+}
+
+<h2>Index</h2>
+<hr/>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUser.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <p> @item.ApplicationUser.Email</p>
+                </td>
+                <td>
+                    <p>@item.UserRole</p>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ApplicationUser.Id">Edit</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
