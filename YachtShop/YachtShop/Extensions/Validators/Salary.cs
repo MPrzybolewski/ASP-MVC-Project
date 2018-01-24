@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace YachtShop.Extensions.Validators
 {
-    public class Sallary : ValidationAttribute
+    public class Salary : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
