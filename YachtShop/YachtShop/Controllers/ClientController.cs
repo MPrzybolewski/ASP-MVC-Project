@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using YachtShop.Models;
 
 namespace YachtShop.Controllers
 {
+    [Authorize(Roles = "Administrator, Seller")]
     public class ClientController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,9 +22,18 @@ namespace YachtShop.Controllers
         }
 
         // GET: Client
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Clients.ToListAsync());
+            ViewData["CurrentFilter"] = searchString;
+
+            var clients = from c in _context.Clients select c;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                clients = clients.Where(c => c.FirstName.Contains(searchString)
+                                             || c.SecondName.Contains(searchString) || c.Email.Contains(searchString)
+                                             || c.PhoneNumber.Contains(searchString));
+            }
+            return View(await clients.AsNoTracking().ToListAsync());
         }
 
         // GET: Client/Details/5
@@ -141,8 +152,15 @@ namespace YachtShop.Controllers
         {
             var client = await _context.Clients.SingleOrDefaultAsync(m => m.ClientId == id);
             _context.Clients.Remove(client);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception e)
+            {
+                return View(client);
+            }
         }
 
         private bool ClientExists(string id)

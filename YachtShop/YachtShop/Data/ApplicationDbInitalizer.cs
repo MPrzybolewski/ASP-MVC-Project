@@ -41,12 +41,26 @@ namespace YachtShop.Data
 
             if (!_context.ApplicationUsers.Any())
             {
-                const string userName = "admin@admin.pl";
-                const string userPass = "p@$$w0rd";
+                const string adminName = "admin@admin.pl";
+                const string adminPass = "p@$$w0rd";
+
+                var admin = new ApplicationUser { UserName = adminName, Email = adminName };
+                _userManager.CreateAsync(admin, adminPass).Wait();
+                _userManager.AddToRoleAsync(admin, Roles.Roles.Administrator).Wait();
+
+                const string sellerName = "seller@seller.pl";
+                const string sellerPass = "seller123";
+
+                var seller = new ApplicationUser { UserName = sellerName, Email = sellerName };
+                _userManager.CreateAsync(seller, sellerPass).Wait();
+                _userManager.AddToRoleAsync(seller, Roles.Roles.Seller).Wait();
+
+                const string userName = "user@user.pl";
+                const string userPass = "user123";
 
                 var user = new ApplicationUser { UserName = userName, Email = userName };
                 _userManager.CreateAsync(user, userPass).Wait();
-                _userManager.AddToRoleAsync(user, Roles.Roles.Administrator).Wait();
+                _userManager.AddToRoleAsync(user, Roles.Roles.User).Wait();
             }
 
             _context.SaveChanges();

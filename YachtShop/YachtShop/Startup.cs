@@ -43,14 +43,14 @@ namespace YachtShop
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddScoped<ApplicationDbInitializer>();
+           // services.AddScoped<ApplicationDbInitializer>();
 
             services.AddRouting(options => options.LowercaseUrls = true);
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbInitializer dbInitalizer)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -74,7 +74,7 @@ namespace YachtShop
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            dbInitalizer.Seed();
+           // dbInitalizer.Seed();
         }
 
      

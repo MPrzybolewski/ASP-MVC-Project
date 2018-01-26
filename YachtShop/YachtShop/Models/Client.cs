@@ -29,6 +29,11 @@ namespace YachtShop.Models
         [Required(ErrorMessage = "Enter Email")]
         public string Email { get; set; }
 
+        public string FullName
+        {
+            get { return FirstName + " " + SecondName; }
+        }
+
         public ICollection<Purchase> Purchases { get; set; }
 
 

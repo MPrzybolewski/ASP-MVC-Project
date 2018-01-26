@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using YachtShop.Extensions.Validators;
 
 namespace YachtShop.Models
 {
@@ -20,5 +21,10 @@ namespace YachtShop.Models
         public string Description { get; set; }
 
         public ICollection<Purchase> Purchases { get; set; }
+
+        public string FullView
+        {
+            get { return Name + " " + Price; }
+        }
     }
 }

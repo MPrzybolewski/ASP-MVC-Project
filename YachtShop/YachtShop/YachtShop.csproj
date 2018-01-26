@@ -5,6 +5,12 @@
     <UserSecretsId>aspnet-YachtShop-6E6989C1-6FF7-499B-9A84-9C090640AD74</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\YachtShop - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\YachtShopApp - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\YachtShopProject - Web Deploy.pubxml" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.2.2" />
@@ -18,6 +24,10 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
 
 </Project>

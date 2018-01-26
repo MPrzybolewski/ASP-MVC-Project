@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -44,6 +45,7 @@ namespace YachtShop.Controllers
         }
 
         // GET: Yacht/Create
+        [Authorize(Roles = "Administrator, Seller")]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +56,7 @@ namespace YachtShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Seller")]
         public async Task<IActionResult> Create([Bind("YachtId,Name,Price,Description")] Yacht yacht)
         {
             if (ModelState.IsValid)
@@ -66,6 +69,7 @@ namespace YachtShop.Controllers
         }
 
         // GET: Yacht/Edit/5
+        [Authorize(Roles = "Administrator, Seller")]
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -86,6 +90,7 @@ namespace YachtShop.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Seller")]
         public async Task<IActionResult> Edit(string id, [Bind("YachtId,Name,Price,Description")] Yacht yacht)
         {
             if (id != yacht.YachtId)
@@ -117,6 +122,7 @@ namespace YachtShop.Controllers
         }
 
         // GET: Yacht/Delete/5
+        [Authorize(Roles = "Administrator, Seller")]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -137,12 +143,20 @@ namespace YachtShop.Controllers
         // POST: Yacht/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator, Seller")]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
             var yacht = await _context.Yachts.SingleOrDefaultAsync(m => m.YachtId == id);
             _context.Yachts.Remove(yacht);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception e)
+            {
+                return View(yacht);
+            }
         }
 
         private bool YachtExists(string id)

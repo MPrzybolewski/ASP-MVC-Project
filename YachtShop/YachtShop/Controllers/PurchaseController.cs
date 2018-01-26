@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using YachtShop.Models;
 
 namespace YachtShop.Controllers
 {
+    [Authorize(Roles = "Administrator, Seller")]
     public class PurchaseController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -50,9 +52,25 @@ namespace YachtShop.Controllers
         // GET: Purchase/Create
         public IActionResult Create()
         {
-            ViewData["ClientId"] = new SelectList(_context.Clients, "ClientId", "ClientId");
-            ViewData["SellerId"] = new SelectList(_context.Sellers, "SellerId", "SellerId");
-            ViewData["YachtId"] = new SelectList(_context.Yachts, "YachtId", "YachtId");
+            ViewData["ClientId"] = new SelectList((from c in _context.Clients
+                select new
+                {
+                    c.ClientId, FullName = c.FirstName + " " + c.SecondName
+                }),
+                "ClientId", "FullName", null);
+            ViewData["SellerId"] = new SelectList((from s in  _context.Sellers
+                select new
+                {
+                    s.SellerId, FullName = s.FirstName + " " + s.SecondName
+                }),
+                "SellerId", "FullName", null);
+            ViewData["YachtId"] = new SelectList((from y in _context.Yachts
+                 select new
+                {
+                    y.YachtId,
+                    FullView = y.Name + " " + y.Price
+                }),
+                "YachtId", "FullView", null);
             return View();
         }
 
@@ -69,9 +87,27 @@ namespace YachtShop.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientId"] = new SelectList(_context.Clients, "ClientId", "ClientId", purchase.ClientId);
-            ViewData["SellerId"] = new SelectList(_context.Sellers, "SellerId", "SellerId", purchase.SellerId);
-            ViewData["YachtId"] = new SelectList(_context.Yachts, "YachtId", "YachtId", purchase.YachtId);
+            ViewData["ClientId"] = new SelectList((from c in _context.Clients
+                    select new
+                    {
+                        c.ClientId,
+                        FullName = c.FirstName + " " + c.SecondName
+                    }),
+                "ClientId", "FullName", null);
+            ViewData["SellerId"] = new SelectList((from s in _context.Sellers
+                    select new
+                    {
+                        s.SellerId,
+                        FullName = s.FirstName + " " + s.SecondName
+                    }),
+                "SellerId", "FullName", null);
+            ViewData["YachtId"] = new SelectList((from y in _context.Yachts
+                    select new
+                    {
+                        y.YachtId,
+                        FullView = y.Name + " " + y.Price
+                    }),
+                "YachtId", "FullView", null);
             return View(purchase);
         }
 
@@ -88,9 +124,27 @@ namespace YachtShop.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClientId"] = new SelectList(_context.Clients, "ClientId", "ClientId", purchase.ClientId);
-            ViewData["SellerId"] = new SelectList(_context.Sellers, "SellerId", "SellerId", purchase.SellerId);
-            ViewData["YachtId"] = new SelectList(_context.Yachts, "YachtId", "YachtId", purchase.YachtId);
+            ViewData["ClientId"] = new SelectList((from c in _context.Clients
+                    select new
+                    {
+                        c.ClientId,
+                        FullName = c.FirstName + " " + c.SecondName
+                    }),
+                "ClientId", "FullName", null);
+            ViewData["SellerId"] = new SelectList((from s in _context.Sellers
+                    select new
+                    {
+                        s.SellerId,
+                        FullName = s.FirstName + " " + s.SecondName
+                    }),
+                "SellerId", "FullName", null);
+            ViewData["YachtId"] = new SelectList((from y in _context.Yachts
+                    select new
+                    {
+                        y.YachtId,
+                        FullView = y.Name + " " + y.Price
+                    }),
+                "YachtId", "FullView", null);
             return View(purchase);
         }
 
@@ -126,9 +180,27 @@ namespace YachtShop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientId"] = new SelectList(_context.Clients, "ClientId", "ClientId", purchase.ClientId);
-            ViewData["SellerId"] = new SelectList(_context.Sellers, "SellerId", "SellerId", purchase.SellerId);
-            ViewData["YachtId"] = new SelectList(_context.Yachts, "YachtId", "YachtId", purchase.YachtId);
+            ViewData["ClientId"] = new SelectList((from c in _context.Clients
+                    select new
+                    {
+                        c.ClientId,
+                        FullName = c.FirstName + " " + c.SecondName
+                    }),
+                "ClientId", "FullName", null);
+            ViewData["SellerId"] = new SelectList((from s in _context.Sellers
+                    select new
+                    {
+                        s.SellerId,
+                        FullName = s.FirstName + " " + s.SecondName
+                    }),
+                "SellerId", "FullName", null);
+            ViewData["YachtId"] = new SelectList((from y in _context.Yachts
+                    select new
+                    {
+                        y.YachtId,
+                        FullView = y.Name + " " + y.Price
+                    }),
+                "YachtId", "FullView", null);
             return View(purchase);
         }
 

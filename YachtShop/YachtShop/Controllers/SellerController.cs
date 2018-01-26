@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using YachtShop.Models;
 
 namespace YachtShop.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class SellerController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,7 +22,7 @@ namespace YachtShop.Controllers
         }
 
         // GET: Seller
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
             return View(await _context.Sellers.ToListAsync());
         }
@@ -141,8 +143,15 @@ namespace YachtShop.Controllers
         {
             var seller = await _context.Sellers.SingleOrDefaultAsync(m => m.SellerId == id);
             _context.Sellers.Remove(seller);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception e)
+            {
+                return View(seller);
+            }
         }
 
         private bool SellerExists(string id)
