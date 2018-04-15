@@ -35,7 +35,5 @@ namespace YachtShop.Models
         }
 
         public ICollection<Purchase> Purchases { get; set; }
-
-
     }
 }
