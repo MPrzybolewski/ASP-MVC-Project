@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using YachtShop.Data;
+using YachtShop.Data.Repositories.Interfaces;
 using YachtShop.Models;
 
 namespace YachtShop.Controllers
@@ -14,11 +15,11 @@ namespace YachtShop.Controllers
     [Authorize(Roles = "Administrator, Seller")]
     public class ClientController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IClientRepository _clientRepository;
 
-        public ClientController(ApplicationDbContext context)
+        public ClientController(IClientRepository clientRepository)
         {
-            _context = context;
+            _clientRepository = clientRepository;
         }
 
         // GET: Client
@@ -26,14 +27,7 @@ namespace YachtShop.Controllers
         {
             ViewData["CurrentFilter"] = searchString;
 
-            var clients = from c in _context.Clients select c;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                clients = clients.Where(c => c.FirstName.Contains(searchString)
-                                             || c.SecondName.Contains(searchString) || c.Email.Contains(searchString)
-                                             || c.PhoneNumber.Contains(searchString));
-            }
-            return View(await clients.AsNoTracking().ToListAsync());
+            return View(await _clientRepository.GetAll());
         }
 
         // GET: Client/Details/5
@@ -44,8 +38,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients
-                .SingleOrDefaultAsync(m => m.ClientId == id);
+            var client = await _clientRepository.GetById(id);
             if (client == null)
             {
                 return NotFound();
@@ -69,8 +62,7 @@ namespace YachtShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(client);
-                await _context.SaveChangesAsync();
+                _clientRepository.Add(client);
                 return RedirectToAction(nameof(Index));
             }
             return View(client);
@@ -84,7 +76,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients.SingleOrDefaultAsync(m => m.ClientId == id);
+            var client = await _clientRepository.GetById(id);
             if (client == null)
             {
                 return NotFound();
@@ -108,12 +100,12 @@ namespace YachtShop.Controllers
             {
                 try
                 {
-                    _context.Update(client);
-                    await _context.SaveChangesAsync();
+                    _clientRepository.Update(client);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientExists(client.ClientId))
+                    var temp = await ClientExists(client.ClientId);
+                    if (!temp)
                     {
                         return NotFound();
                     }
@@ -135,8 +127,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var client = await _context.Clients
-                .SingleOrDefaultAsync(m => m.ClientId == id);
+            var client = await _clientRepository.GetById(id);
             if (client == null)
             {
                 return NotFound();
@@ -150,11 +141,10 @@ namespace YachtShop.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var client = await _context.Clients.SingleOrDefaultAsync(m => m.ClientId == id);
-            _context.Clients.Remove(client);
+            var client = await _clientRepository.GetById(id);
             try
             {
-                await _context.SaveChangesAsync();
+                _clientRepository.Delete(client);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception e)
@@ -163,9 +153,14 @@ namespace YachtShop.Controllers
             }
         }
 
-        private bool ClientExists(string id)
+        private async Task<bool> ClientExists(string id)
         {
-            return _context.Clients.Any(e => e.ClientId == id);
+            var client = await _clientRepository.GetById(id);
+            if (client == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

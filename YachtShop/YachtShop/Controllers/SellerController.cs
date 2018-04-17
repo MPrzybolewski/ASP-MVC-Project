@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using YachtShop.Data;
+using YachtShop.Data.Repositories.Interfaces;
 using YachtShop.Models;
 
 namespace YachtShop.Controllers
@@ -14,17 +15,17 @@ namespace YachtShop.Controllers
     [Authorize(Roles = "Administrator")]
     public class SellerController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ISellerRepository _sellerRepostory;
 
-        public SellerController(ApplicationDbContext context)
+        public SellerController(ISellerRepository sellerRepository)
         {
-            _context = context;
+            _sellerRepostory = sellerRepository;
         }
 
         // GET: Seller
         public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Sellers.ToListAsync());
+            return View(await _sellerRepostory.GetAll());
         }
 
         // GET: Seller/Details/5
@@ -35,8 +36,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var seller = await _context.Sellers
-                .SingleOrDefaultAsync(m => m.SellerId == id);
+            var seller = await _sellerRepostory.GetById(id);
             if (seller == null)
             {
                 return NotFound();
@@ -60,8 +60,7 @@ namespace YachtShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(seller);
-                await _context.SaveChangesAsync();
+                _sellerRepostory.Add(seller);
                 return RedirectToAction(nameof(Index));
             }
             return View(seller);
@@ -75,7 +74,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var seller = await _context.Sellers.SingleOrDefaultAsync(m => m.SellerId == id);
+            var seller = await _sellerRepostory.GetById(id);
             if (seller == null)
             {
                 return NotFound();
@@ -99,12 +98,12 @@ namespace YachtShop.Controllers
             {
                 try
                 {
-                    _context.Update(seller);
-                    await _context.SaveChangesAsync();
+                    _sellerRepostory.Update(seller);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SellerExists(seller.SellerId))
+                    var temp = await SellerExists(seller.SellerId);
+                    if (!temp)
                     {
                         return NotFound();
                     }
@@ -126,8 +125,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var seller = await _context.Sellers
-                .SingleOrDefaultAsync(m => m.SellerId == id);
+            var seller = await _sellerRepostory.GetById(id);
             if (seller == null)
             {
                 return NotFound();
@@ -141,11 +139,10 @@ namespace YachtShop.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var seller = await _context.Sellers.SingleOrDefaultAsync(m => m.SellerId == id);
-            _context.Sellers.Remove(seller);
+            var seller = await _sellerRepostory.GetById(id);
+            _sellerRepostory.Delete(seller);
             try
             {
-                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception e)
@@ -154,9 +151,14 @@ namespace YachtShop.Controllers
             }
         }
 
-        private bool SellerExists(string id)
+        private async Task<bool> SellerExists(string id)
         {
-            return _context.Sellers.Any(e => e.SellerId == id);
+            var seller = await _sellerRepostory.GetById(id);
+            if (seller == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -11,7 +11,8 @@ using YachtShop.Data;
 using YachtShop.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
-
+using YachtShop.Data.Repositories;
+using YachtShop.Data.Repositories.Interfaces;
 
 namespace YachtShop
 {
@@ -43,9 +44,16 @@ namespace YachtShop
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-           // services.AddScoped<ApplicationDbInitializer>();
+            // services.AddScoped<ApplicationDbInitializer>();
+
+            services.AddTransient<IClientRepository, ClientRepository>();
+            services.AddTransient<ISellerRepository, SellerRepository>();
+            services.AddTransient<IYachtRepository, YachtRepository>();
+            services.AddTransient<IPurchaseRepository, PurchaseRepository>();
 
             services.AddRouting(options => options.LowercaseUrls = true);
+
+
             services.AddMvc();
         }
 

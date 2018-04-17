@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{EA001C70-D05F-4B6E-A6D9-6263CDB7997D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="YachtShop/Controllers/ClientController.cs">
+    <Files>
+      <File FileName="YachtShop/Controllers/PurchaseController.cs" Line="179" Column="19" />
+      <File FileName="YachtShop/Controllers/ClientController.cs" Line="163" Column="25" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../../../../../../Repo/MountainWalker.Touch/Bindings/TrailDialogBinding.cs" line="54" offsetX="726" offsetY="795" expression="poly" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.YachtShop PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

@@ -7,23 +7,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using YachtShop.Data;
+using YachtShop.Data.Repositories.Interfaces;
 using YachtShop.Models;
 
 namespace YachtShop.Controllers
 {
     public class YachtController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IYachtRepository _yachtRepository;
 
-        public YachtController(ApplicationDbContext context)
+        public YachtController(IYachtRepository yachtRepository)
         {
-            _context = context;
+            _yachtRepository = yachtRepository;
         }
 
         // GET: Yacht
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Yachts.ToListAsync());
+            return View(await _yachtRepository.GetAll());
         }
 
         // GET: Yacht/Details/5
@@ -34,8 +35,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var yacht = await _context.Yachts
-                .SingleOrDefaultAsync(m => m.YachtId == id);
+            var yacht = await _yachtRepository.GetById(id);
             if (yacht == null)
             {
                 return NotFound();
@@ -61,8 +61,7 @@ namespace YachtShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(yacht);
-                await _context.SaveChangesAsync();
+                _yachtRepository.Add(yacht);
                 return RedirectToAction(nameof(Index));
             }
             return View(yacht);
@@ -77,7 +76,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var yacht = await _context.Yachts.SingleOrDefaultAsync(m => m.YachtId == id);
+            var yacht = await _yachtRepository.GetById(id);
             if (yacht == null)
             {
                 return NotFound();
@@ -102,12 +101,12 @@ namespace YachtShop.Controllers
             {
                 try
                 {
-                    _context.Update(yacht);
-                    await _context.SaveChangesAsync();
+                    _yachtRepository.Update(yacht);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!YachtExists(yacht.YachtId))
+                    var temp = await YachtExists(yacht.YachtId);
+                    if (!temp)
                     {
                         return NotFound();
                     }
@@ -130,8 +129,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var yacht = await _context.Yachts
-                .SingleOrDefaultAsync(m => m.YachtId == id);
+            var yacht = await _yachtRepository.GetById(id);
             if (yacht == null)
             {
                 return NotFound();
@@ -146,11 +144,10 @@ namespace YachtShop.Controllers
         [Authorize(Roles = "Administrator, Seller")]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var yacht = await _context.Yachts.SingleOrDefaultAsync(m => m.YachtId == id);
-            _context.Yachts.Remove(yacht);
+            var yacht = await _yachtRepository.GetById(id);
+            _yachtRepository.Delete(yacht);
             try
             {
-                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception e)
@@ -159,9 +156,14 @@ namespace YachtShop.Controllers
             }
         }
 
-        private bool YachtExists(string id)
+        private async Task<bool> YachtExists(string id)
         {
-            return _context.Yachts.Any(e => e.YachtId == id);
+            var seller = await _yachtRepository.GetById(id);
+            if (seller == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

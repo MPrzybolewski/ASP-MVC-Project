@@ -28,6 +28,8 @@
 
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Data\Repositories\" />
+    <Folder Include="Data\Repositories\Interfaces\" />
   </ItemGroup>
 
 </Project>
