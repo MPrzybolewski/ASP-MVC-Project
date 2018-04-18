@@ -13,12 +13,33 @@ namespace YachtShop.Tests
 {
     public class ClientControllerTests
     {
+
         [Fact]
-        public async Task Index_GivenThreeResultsShouldReutrnCorrectNumberOfModels()
+        public async Task Controller_ShouldReturnIndexView()
         {
             var models = new List<Client>
             {
                 new Client(),
+                new Client()
+            };
+
+            var repositoryMock = new Mock<IClientRepository>();
+            repositoryMock.Setup(x => x.GetAll()).ReturnsAsync(models);
+
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
+            var result = await controller.Index();
+            var viewResult = (ViewResult)result;
+            Assert.Equal("Index", viewResult.ViewName);
+
+        }
+
+        [Fact]
+        public async Task Index_Give2ModelsShouldReturnCorrectNumberOfModels()
+        {
+            var models = new List<Client>
+            {
                 new Client(),
                 new Client()
             };
@@ -35,12 +56,12 @@ namespace YachtShop.Tests
             var viewResult = (ViewResult)result;
             var model = (IList<Client>)viewResult.Model;
 
-            Assert.Equal(3, model.Count);
+            Assert.Equal(2, model.Count);
         }
 
 
         [Fact]
-        public async Task Index_GivenNoResultsFromServiceShouldReturnEmptyModel()
+        public async Task Index_GiveZeroModelsShouldReturnEmptyModel()
         {
             // Arrange
             var repositoryMock = new Mock<IClientRepository>();

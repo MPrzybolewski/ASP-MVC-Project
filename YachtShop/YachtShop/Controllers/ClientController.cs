@@ -28,7 +28,7 @@ namespace YachtShop.Controllers
         // GET: Client
         public async Task<IActionResult> Index()
         {
-            return View(await _clientRepository.GetAll());
+            return View("Index",await _clientRepository.GetAll());
         }
 
         // GET: Client/Details/5

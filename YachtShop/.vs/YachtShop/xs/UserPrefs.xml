@@ -1,14 +1,34 @@
 ﻿<Properties StartupConfiguration="{EA001C70-D05F-4B6E-A6D9-6263CDB7997D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../../../Library/Frameworks/Mono.framework/Versions/5.8.1/lib/mono/msbuild/15.0/bin/Roslyn/Microsoft.CSharp.Core.targets">
+  <MonoDevelop.Ide.Workbench ActiveDocument="YachtShop/Controllers/ClientController.cs">
     <Files>
-      <File FileName="YachtShop.Tests/ClientControllerTests.cs" Line="3" Column="27" />
-      <File FileName="YachtShop.Tests/ClientTest.cs" Line="1" Column="1" />
-      <File FileName="../../../../../../../../Library/Frameworks/Mono.framework/Versions/5.8.1/lib/mono/msbuild/15.0/bin/Roslyn/Microsoft.CSharp.Core.targets" Line="84" Column="75" />
+      <File FileName="YachtShop.Tests/ClientTest.cs" Line="38" Column="57" />
+      <File FileName="YachtShop.Tests/ClientControllerTests.cs" Line="18" Column="16" />
+      <File FileName="YachtShop/Controllers/ClientController.cs" Line="27" Column="9" />
+      <File FileName="YachtShop/Startup.cs" Line="43" Column="16" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="YachtShop" expanded="True">
+            <Node name="YachtShop.Tests" expanded="True">
+              <Node name="YachtShop" expanded="True">
+                <Node name="Tests" expanded="True">
+                  <Node name="ClientControllerTests" expanded="True">
+                    <Node name="Controller_ShouldReturnIndexView" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/marekprzybolewski/Studia/Rok3/Sem2/dotNet/ASP-MVC-Project/YachtShop/YachtShop.Tests/ClientControllerTests.cs" relfile="YachtShop.Tests/ClientControllerTests.cs" line="34" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
