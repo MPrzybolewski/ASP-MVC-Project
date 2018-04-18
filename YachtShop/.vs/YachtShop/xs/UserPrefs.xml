@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{EA001C70-D05F-4B6E-A6D9-6263CDB7997D}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../../../Library/Frameworks/Mono.framework/Versions/5.8.1/lib/mono/msbuild/15.0/bin/Roslyn/Microsoft.CSharp.Core.targets">
+    <Files>
+      <File FileName="YachtShop.Tests/ClientControllerTests.cs" Line="3" Column="27" />
+      <File FileName="YachtShop.Tests/ClientTest.cs" Line="1" Column="1" />
+      <File FileName="../../../../../../../../Library/Frameworks/Mono.framework/Versions/5.8.1/lib/mono/msbuild/15.0/bin/Roslyn/Microsoft.CSharp.Core.targets" Line="84" Column="75" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.YachtShop PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
