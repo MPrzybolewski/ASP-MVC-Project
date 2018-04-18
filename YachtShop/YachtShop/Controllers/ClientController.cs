@@ -36,13 +36,13 @@ namespace YachtShop.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var client = await _clientRepository.GetById(id);
             if (client == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             return View(client);
