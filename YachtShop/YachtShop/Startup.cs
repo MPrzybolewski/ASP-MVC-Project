@@ -13,6 +13,8 @@ using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using YachtShop.Data.Repositories;
 using YachtShop.Data.Repositories.Interfaces;
+using YachtShop.Data.UnitOfWork.Abstraction;
+using YachtShop.Data.UnitOfWork;
 
 namespace YachtShop
 {
@@ -50,6 +52,7 @@ namespace YachtShop
             services.AddTransient<ISellerRepository, SellerRepository>();
             services.AddTransient<IYachtRepository, YachtRepository>();
             services.AddTransient<IPurchaseRepository, PurchaseRepository>();
+            services.AddTransient<IUnitOfWork, EntityUnitOfWork>();
 
             services.AddRouting(options => options.LowercaseUrls = true);
 

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using YachtShop.Data;
 using YachtShop.Data.Repositories.Interfaces;
+using YachtShop.Data.UnitOfWork.Abstraction;
 using YachtShop.Models;
 
 namespace YachtShop.Controllers
@@ -16,17 +17,17 @@ namespace YachtShop.Controllers
     public class ClientController : Controller
     {
         private readonly IClientRepository _clientRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public ClientController(IClientRepository clientRepository)
+        public ClientController(IClientRepository clientRepository, IUnitOfWork unitOfWork)
         {
             _clientRepository = clientRepository;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: Client
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index()
         {
-            ViewData["CurrentFilter"] = searchString;
-
             return View(await _clientRepository.GetAll());
         }
 
@@ -63,6 +64,7 @@ namespace YachtShop.Controllers
             if (ModelState.IsValid)
             {
                 _clientRepository.Add(client);
+                await _unitOfWork.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             return View(client);
@@ -101,6 +103,7 @@ namespace YachtShop.Controllers
                 try
                 {
                     _clientRepository.Update(client);
+                    await _unitOfWork.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -145,6 +148,7 @@ namespace YachtShop.Controllers
             try
             {
                 _clientRepository.Delete(client);
+                await _unitOfWork.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception e)

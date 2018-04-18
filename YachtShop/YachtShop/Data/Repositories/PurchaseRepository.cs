@@ -18,13 +18,11 @@ namespace YachtShop.Data.Repositories
         public void Add(Purchase purchase)
         {
             _context.Purchases.Add(purchase);
-            _context.SaveChanges();
         }
 
         public void Delete(Purchase purchase)
         {
             _context.Purchases.Remove(purchase);
-            _context.SaveChanges();
         }
 
         public async Task<IEnumerable<Purchase>> GetAll()
@@ -42,7 +40,6 @@ namespace YachtShop.Data.Repositories
         public void Update(Purchase purchase)
         {
             _context.Purchases.Update(purchase);
-            _context.SaveChanges();
         }
     }
 }

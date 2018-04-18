@@ -20,13 +20,11 @@ namespace YachtShop.Data.Repositories
         public void Add(Seller seller)
         {
             _context.Add(seller);
-            _context.SaveChanges();
         }
 
         public void Delete(Seller seller)
         {
             _context.Remove(seller);
-            _context.SaveChanges();
         }
 
         public async Task<IEnumerable<Seller>> GetAll()
@@ -42,7 +40,6 @@ namespace YachtShop.Data.Repositories
         public void Update(Seller seller)
         {
             _context.Update(seller);
-            _context.SaveChanges();
         }
 
     }

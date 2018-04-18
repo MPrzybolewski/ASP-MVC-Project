@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using YachtShop.Data;
+using YachtShop.Data.Repositories.Interfaces;
+using YachtShop.Data.UnitOfWork.Abstraction;
 using YachtShop.Models;
 
 namespace YachtShop.Controllers
@@ -14,18 +16,26 @@ namespace YachtShop.Controllers
     [Authorize(Roles = "Administrator, Seller")]
     public class PurchaseController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IPurchaseRepository _purchaseRepository;
+        private readonly IClientRepository _clientRepository;
+        private readonly ISellerRepository _sellerRepository;
+        private readonly IYachtRepository _yachtRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public PurchaseController(ApplicationDbContext context)
+        public PurchaseController(IPurchaseRepository purchaseRepository, IClientRepository clientRepository,
+                                  ISellerRepository sellerRepository, IYachtRepository yachtRepository, IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _purchaseRepository = purchaseRepository;
+            _clientRepository = clientRepository;
+            _sellerRepository = sellerRepository;
+            _yachtRepository = yachtRepository;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: Purchase
         public async Task<IActionResult> Index()
-        {
-            var applicationDbContext = _context.Purchases.Include(p => p.Client).Include(p => p.Seller).Include(p => p.Yacht);
-            return View(await applicationDbContext.ToListAsync());
+        {   
+            return View(await _purchaseRepository.GetAll());
         }
 
         // GET: Purchase/Details/5
@@ -36,11 +46,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var purchase = await _context.Purchases
-                .Include(p => p.Client)
-                .Include(p => p.Seller)
-                .Include(p => p.Yacht)
-                .SingleOrDefaultAsync(m => m.PurchaseId == id);
+            var purchase = await _purchaseRepository.GetById(id);
             if (purchase == null)
             {
                 return NotFound();
@@ -50,26 +56,13 @@ namespace YachtShop.Controllers
         }
 
         // GET: Purchase/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewData["ClientId"] = new SelectList((from c in _context.Clients
-                select new
-                {
-                    c.ClientId, FullName = c.FirstName + " " + c.SecondName
-                }),
+            ViewData["ClientId"] = new SelectList( await _clientRepository.GetAll(),
                 "ClientId", "FullName", null);
-            ViewData["SellerId"] = new SelectList((from s in  _context.Sellers
-                select new
-                {
-                    s.SellerId, FullName = s.FirstName + " " + s.SecondName
-                }),
+            ViewData["SellerId"] = new SelectList( await _sellerRepository.GetAll(),
                 "SellerId", "FullName", null);
-            ViewData["YachtId"] = new SelectList((from y in _context.Yachts
-                 select new
-                {
-                    y.YachtId,
-                    FullView = y.Name + " " + y.Price
-                }),
+            ViewData["YachtId"] = new SelectList( await _yachtRepository.GetAll(),
                 "YachtId", "FullView", null);
             return View();
         }
@@ -83,30 +76,15 @@ namespace YachtShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(purchase);
-                await _context.SaveChangesAsync();
+                _purchaseRepository.Add(purchase);
+                await _unitOfWork.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientId"] = new SelectList((from c in _context.Clients
-                    select new
-                    {
-                        c.ClientId,
-                        FullName = c.FirstName + " " + c.SecondName
-                    }),
+            ViewData["ClientId"] = new SelectList( await _clientRepository.GetAll(),
                 "ClientId", "FullName", null);
-            ViewData["SellerId"] = new SelectList((from s in _context.Sellers
-                    select new
-                    {
-                        s.SellerId,
-                        FullName = s.FirstName + " " + s.SecondName
-                    }),
+            ViewData["SellerId"] = new SelectList( await _sellerRepository.GetAll(),
                 "SellerId", "FullName", null);
-            ViewData["YachtId"] = new SelectList((from y in _context.Yachts
-                    select new
-                    {
-                        y.YachtId,
-                        FullView = y.Name + " " + y.Price
-                    }),
+            ViewData["YachtId"] = new SelectList( await _yachtRepository.GetAll(),
                 "YachtId", "FullView", null);
             return View(purchase);
         }
@@ -119,31 +97,16 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var purchase = await _context.Purchases.SingleOrDefaultAsync(m => m.PurchaseId == id);
+            var purchase = await _purchaseRepository.GetById(id);
             if (purchase == null)
             {
                 return NotFound();
             }
-            ViewData["ClientId"] = new SelectList((from c in _context.Clients
-                    select new
-                    {
-                        c.ClientId,
-                        FullName = c.FirstName + " " + c.SecondName
-                    }),
+            ViewData["ClientId"] = new SelectList( await _clientRepository.GetAll(),
                 "ClientId", "FullName", null);
-            ViewData["SellerId"] = new SelectList((from s in _context.Sellers
-                    select new
-                    {
-                        s.SellerId,
-                        FullName = s.FirstName + " " + s.SecondName
-                    }),
+            ViewData["SellerId"] = new SelectList( await _sellerRepository.GetAll(),
                 "SellerId", "FullName", null);
-            ViewData["YachtId"] = new SelectList((from y in _context.Yachts
-                    select new
-                    {
-                        y.YachtId,
-                        FullView = y.Name + " " + y.Price
-                    }),
+            ViewData["YachtId"] = new SelectList( await _yachtRepository.GetAll(),
                 "YachtId", "FullView", null);
             return View(purchase);
         }
@@ -164,12 +127,13 @@ namespace YachtShop.Controllers
             {
                 try
                 {
-                    _context.Update(purchase);
-                    await _context.SaveChangesAsync();
+                    _purchaseRepository.Update(purchase);
+                    await _unitOfWork.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PurchaseExists(purchase.PurchaseId))
+                    var temp = await PurchaseExists(purchase.PurchaseId);
+                    if (!temp)
                     {
                         return NotFound();
                     }
@@ -180,26 +144,11 @@ namespace YachtShop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientId"] = new SelectList((from c in _context.Clients
-                    select new
-                    {
-                        c.ClientId,
-                        FullName = c.FirstName + " " + c.SecondName
-                    }),
+            ViewData["ClientId"] = new SelectList(await _clientRepository.GetAll(),
                 "ClientId", "FullName", null);
-            ViewData["SellerId"] = new SelectList((from s in _context.Sellers
-                    select new
-                    {
-                        s.SellerId,
-                        FullName = s.FirstName + " " + s.SecondName
-                    }),
+            ViewData["SellerId"] = new SelectList(await _sellerRepository.GetAll(),
                 "SellerId", "FullName", null);
-            ViewData["YachtId"] = new SelectList((from y in _context.Yachts
-                    select new
-                    {
-                        y.YachtId,
-                        FullView = y.Name + " " + y.Price
-                    }),
+            ViewData["YachtId"] = new SelectList(await _yachtRepository.GetAll(),
                 "YachtId", "FullView", null);
             return View(purchase);
         }
@@ -212,11 +161,7 @@ namespace YachtShop.Controllers
                 return NotFound();
             }
 
-            var purchase = await _context.Purchases
-                .Include(p => p.Client)
-                .Include(p => p.Seller)
-                .Include(p => p.Yacht)
-                .SingleOrDefaultAsync(m => m.PurchaseId == id);
+            var purchase = await _purchaseRepository.GetById(id);
             if (purchase == null)
             {
                 return NotFound();
@@ -230,15 +175,21 @@ namespace YachtShop.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var purchase = await _context.Purchases.SingleOrDefaultAsync(m => m.PurchaseId == id);
-            _context.Purchases.Remove(purchase);
-            await _context.SaveChangesAsync();
+            var purchase = await _purchaseRepository.GetById(id);
+            _purchaseRepository.Delete(purchase);
+            await _unitOfWork.SaveChanges();
+
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PurchaseExists(string id)
+        private async Task<bool> PurchaseExists(string id)
         {
-            return _context.Purchases.Any(e => e.PurchaseId == id);
+            var purchase = await _purchaseRepository.GetById(id);
+            if (purchase == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using YachtShop.Data;
 using YachtShop.Data.Repositories.Interfaces;
+using YachtShop.Data.UnitOfWork.Abstraction;
 using YachtShop.Models;
 
 namespace YachtShop.Controllers
@@ -16,10 +17,12 @@ namespace YachtShop.Controllers
     public class SellerController : Controller
     {
         private readonly ISellerRepository _sellerRepostory;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public SellerController(ISellerRepository sellerRepository)
+        public SellerController(ISellerRepository sellerRepository, IUnitOfWork unitOfWork)
         {
             _sellerRepostory = sellerRepository;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: Seller
@@ -61,6 +64,7 @@ namespace YachtShop.Controllers
             if (ModelState.IsValid)
             {
                 _sellerRepostory.Add(seller);
+                await _unitOfWork.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             return View(seller);
@@ -99,6 +103,7 @@ namespace YachtShop.Controllers
                 try
                 {
                     _sellerRepostory.Update(seller);
+                    await _unitOfWork.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -140,9 +145,10 @@ namespace YachtShop.Controllers
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
             var seller = await _sellerRepostory.GetById(id);
-            _sellerRepostory.Delete(seller);
             try
             {
+                _sellerRepostory.Delete(seller);
+                await _unitOfWork.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception e)
