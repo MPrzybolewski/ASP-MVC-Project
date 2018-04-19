@@ -45,13 +45,13 @@ namespace YachtShop.Controllers
                 return View("NotFound");
             }
 
-            return View(client);
+            return View("Details", client);
         }
 
         // GET: Client/Create
         public IActionResult Create()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: Client/Create
@@ -75,15 +75,15 @@ namespace YachtShop.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var client = await _clientRepository.GetById(id);
             if (client == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
-            return View(client);
+            return View("Edit",client);
         }
 
         // POST: Client/Edit/5
@@ -95,7 +95,7 @@ namespace YachtShop.Controllers
         {
             if (id != client.ClientId)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             if (ModelState.IsValid)
@@ -110,7 +110,7 @@ namespace YachtShop.Controllers
                     var temp = await ClientExists(client.ClientId);
                     if (!temp)
                     {
-                        return NotFound();
+                        return View("NotFound");
                     }
                     else
                     {
@@ -119,6 +119,7 @@ namespace YachtShop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(client);
         }
 

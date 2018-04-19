@@ -1,10 +1,13 @@
 ﻿<Properties StartupConfiguration="{EA001C70-D05F-4B6E-A6D9-6263CDB7997D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="YachtShop/Controllers/ClientController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="YachtShop.Tests/ClientTest.cs">
     <Files>
+      <File FileName="YachtShop.Tests/ClientControllerTests.cs" Line="305" Column="61" />
+      <File FileName="YachtShop/Controllers/ClientController.cs" Line="98" Column="41" />
+      <File FileName="YachtShop.Tests/Mocks/ClientRepositoryMock.cs" Line="56" Column="37" />
+      <File FileName="YachtShop.Tests/Mocks/UnitOfWorkMock.cs" Line="11" Column="20" />
+      <File FileName="YachtShop/Startup.cs" Line="73" Column="14" />
+      <File FileName="YachtShop/Data/Repositories/ClientRepository.cs" Line="40" Column="10" />
       <File FileName="YachtShop.Tests/ClientTest.cs" Line="38" Column="57" />
-      <File FileName="YachtShop.Tests/ClientControllerTests.cs" Line="18" Column="16" />
-      <File FileName="YachtShop/Controllers/ClientController.cs" Line="27" Column="9" />
-      <File FileName="YachtShop/Startup.cs" Line="43" Column="16" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
@@ -13,9 +16,8 @@
             <Node name="YachtShop.Tests" expanded="True">
               <Node name="YachtShop" expanded="True">
                 <Node name="Tests" expanded="True">
-                  <Node name="ClientControllerTests" expanded="True">
-                    <Node name="Controller_ShouldReturnIndexView" selected="True" />
-                  </Node>
+                  <Node name="ClientControllerTests" expanded="True" />
+                  <Node name="ClientTest" expanded="True" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -27,7 +29,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/marekprzybolewski/Studia/Rok3/Sem2/dotNet/ASP-MVC-Project/YachtShop/YachtShop.Tests/ClientControllerTests.cs" relfile="YachtShop.Tests/ClientControllerTests.cs" line="34" column="1" />
+      <Breakpoint file="/Users/marekprzybolewski/Studia/Rok3/Sem2/dotNet/ASP-MVC-Project/YachtShop/YachtShop.Tests/Mocks/ClientRepositoryMock.cs" relfile="YachtShop.Tests/Mocks/ClientRepositoryMock.cs" line="19" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

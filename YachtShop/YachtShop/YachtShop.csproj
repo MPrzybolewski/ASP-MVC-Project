@@ -32,6 +32,7 @@
     <Folder Include="Data\Repositories\Interfaces\" />
     <Folder Include="Data\UnitOfWork\" />
     <Folder Include="Data\UnitOfWork\Abstraction\" />
+    <Folder Include="Data\Services\" />
   </ItemGroup>
 
 </Project>

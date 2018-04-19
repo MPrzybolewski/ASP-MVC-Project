@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -8,6 +10,7 @@ using YachtShop.Controllers;
 using YachtShop.Data.Repositories.Interfaces;
 using YachtShop.Data.UnitOfWork.Abstraction;
 using YachtShop.Models;
+using YachtShop.Tests.Mocks;
 
 namespace YachtShop.Tests
 {
@@ -32,7 +35,6 @@ namespace YachtShop.Tests
             var result = await controller.Index();
             var viewResult = (ViewResult)result;
             Assert.Equal("Index", viewResult.ViewName);
-
         }
 
         [Fact]
@@ -79,6 +81,25 @@ namespace YachtShop.Tests
             var model = (IList<Client>)viewResult.Model;
 
             Assert.Empty(model);
+        }
+
+        [Fact]
+        public async Task Controller_ShouldReturnDetailsView()
+        {
+            Client client1 = new Client
+            {
+                FirstName = "Jan"
+            };
+
+            var repositoryMock = new Mock<IClientRepository>();
+            repositoryMock.Setup(x => x.GetById("1")).ReturnsAsync(client1);
+
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
+            var result = await controller.Details("1");
+            var viewResult = (ViewResult)result;
+            Assert.Equal("Details", viewResult.ViewName);
         }
 
         [Fact]
@@ -148,5 +169,149 @@ namespace YachtShop.Tests
 
             Assert.Equal("NotFound", result.ViewName);
         }
+
+
+        [Fact]
+        public void Controller_ShouldReturnCreateView()
+        {
+            var repositoryMock = new Mock<IClientRepository>();
+
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
+            var result =  controller.Create();
+            var viewResult = (ViewResult)result;
+            Assert.Equal("Create", viewResult.ViewName);
+        }
+
+        [Fact]
+        public async Task Create_CorrectRedirectToIndex()
+        {
+            Client client1 = new Client();
+
+            var repositoryMock = new Mock<IClientRepository>();
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
+
+            var result = await controller.Create(client1);
+            var redirectResult = (RedirectToActionResult)result;
+
+            Assert.Equal("Index", redirectResult.ActionName);
+        }
+
+        [Fact]
+        public async Task Create_CorrectAdding()
+        {
+            Client client1 = new Client();
+
+            var repositoryMock = new ClientRepositoryMock();
+            var unitOfWorkMock = new UnitOfWorkMock();
+
+            var controller = new ClientController(repositoryMock, unitOfWorkMock);
+
+            await controller.Create(client1);
+
+            IEnumerable<Client> clientsList = await repositoryMock.GetAll();
+            int result = clientsList.Count();
+
+            Assert.Equal(1, result);
+        }
+
+        [Fact]
+        public async Task Controller_ShouldReturnEditView()
+        {
+            Client client1 = new Client();
+
+            var repositoryMock = new Mock<IClientRepository>();
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            repositoryMock.Setup(x => x.GetById("1")).ReturnsAsync(client1);
+
+            var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
+            var result = controller.Edit("1");
+            var viewResult = await result as ViewResult;
+            Assert.Equal("Edit", viewResult.ViewName);
+        }
+
+        [Fact]
+        public async Task Edit_GiveDiffrentIdAndClientReturnNotFoundView()
+        {
+            Client client1 = new Client
+            {
+                ClientId = "1"
+            };
+
+            var repositoryMock = new Mock<IClientRepository>();
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
+            var result = controller.Edit("2", client1);
+            var viewResult = await result as ViewResult;
+            Assert.Equal("NotFound", viewResult.ViewName);
+        }
+
+        [Fact]
+        public async Task Edit_CorrectRedirectToIndex()
+        {
+            Client client1 = new Client
+            {
+                ClientId = "1"
+            };
+
+            var repositoryMock = new Mock<IClientRepository>();
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
+
+            var result = await controller.Edit("1", client1);
+            var redirectResult = (RedirectToActionResult)result;
+
+            Assert.Equal("Index", redirectResult.ActionName);
+        }
+
+        [Fact]
+        public async Task Edit_CorrectUpdate()
+        {
+            Client client1 = new Client
+            {
+                FirstName = "Jan"
+            };
+
+            var repositoryMock = new ClientRepositoryMock();
+            var unitOfWorkMock = new UnitOfWorkMock();
+
+            var controller = new ClientController(repositoryMock, unitOfWorkMock);
+
+            await controller.Create(client1);
+
+            client1.FirstName = "Staś";
+            await controller.Edit(client1.ClientId, client1);
+
+            Client clientResult = await repositoryMock.GetById(client1.ClientId);
+            string result = clientResult.FirstName;
+
+            Assert.Equal("Staś", result);
+        }
+
+        [Fact]
+        public async Task Edit_UpdateNonExistingClientThrowException()
+        {
+            Client client1 = new Client
+            {
+                FirstName = "Jan"
+            };
+
+            var repositoryMock = new ClientRepositoryMock();
+            var unitOfWorkMock = new UnitOfWorkMock();
+
+            var controller = new ClientController(repositoryMock, unitOfWorkMock);
+
+            client1.FirstName = "Staś";
+
+            await Assert.ThrowsAsync<Exception>(() => controller.Edit(client1.ClientId, client1));
+        }
+
+
     }
 }

@@ -19,6 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Mocks\ClientRepositoryMock.cs" />
+    <Folder Include="Mocks\" />
   </ItemGroup>
 </Project>

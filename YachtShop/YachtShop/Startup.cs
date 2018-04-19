@@ -75,7 +75,8 @@ namespace YachtShop
             }
 
             app.UseStaticFiles();
-
+            app.UseStatusCodePagesWithReExecute("/Client/Error", "?statusCode={0}");
+            app.UseRequestLocalization();
             app.UseAuthentication();
 
             app.UseMvc(routes =>
