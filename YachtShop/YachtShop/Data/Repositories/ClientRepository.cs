@@ -33,7 +33,7 @@ namespace YachtShop.Data.Repositories
 
         public async Task<Client> GetById(string id)
         {
-            return await _context.Clients.FirstOrDefaultAsync(x => x.ClientId == id);
+            return await _context.Clients.FirstAsync(x => x.ClientId == id);
         }
 
         public void Update(Client client)

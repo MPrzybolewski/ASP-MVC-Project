@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -23,6 +24,17 @@ namespace YachtShop.Controllers
         {
             _clientRepository = clientRepository;
             _unitOfWork = unitOfWork;
+        }
+
+        [AllowAnonymous]
+        public IActionResult Error(int? statusCode)
+        {
+            var vm = new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+
+            return View(vm);
         }
 
         // GET: Client
@@ -128,16 +140,16 @@ namespace YachtShop.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
             var client = await _clientRepository.GetById(id);
             if (client == null)
             {
-                return NotFound();
+                return View("NotFound");
             }
 
-            return View(client);
+            return View("Delete", client);
         }
 
         // POST: Client/Delete/5
@@ -154,7 +166,7 @@ namespace YachtShop.Controllers
             }
             catch (Exception e)
             {
-                return View(client);
+                return View("NotFound");
             }
         }
 

@@ -179,7 +179,7 @@ namespace YachtShop.Tests
             var unitOfWorkMock = new Mock<IUnitOfWork>();
 
             var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
-            var result =  controller.Create();
+            var result = controller.Create();
             var viewResult = (ViewResult)result;
             Assert.Equal("Create", viewResult.ViewName);
         }
@@ -313,5 +313,86 @@ namespace YachtShop.Tests
         }
 
 
+        [Fact]
+        public async Task Controller_ShouldReturnDeleteView()
+        {
+            Client client1 = new Client();
+
+            var repositoryMock = new Mock<IClientRepository>();
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            repositoryMock.Setup(x => x.GetById("1")).ReturnsAsync(client1);
+
+            var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
+            var result = controller.Delete("1");
+            var viewResult = await result as ViewResult;
+            Assert.Equal("Delete", viewResult.ViewName);
+        }
+
+        [Fact]
+        public async Task Delete_GiveNullIdReturnNotFoundView()
+        {
+            var repositoryMock = new Mock<IClientRepository>();
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
+            var result = controller.Delete(null);
+            var viewResult = await result as ViewResult;
+            Assert.Equal("NotFound", viewResult.ViewName);
+        }
+
+        [Fact]
+        public async Task Delete_GiveNotExistsIdReturnNotFoundView()
+        {
+            var repositoryMock = new Mock<IClientRepository>();
+            var unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            var controller = new ClientController(repositoryMock.Object, unitOfWorkMock.Object);
+            var result = controller.Delete("1");
+            var viewResult = await result as ViewResult;
+            Assert.Equal("NotFound", viewResult.ViewName);
+        }
+
+        [Fact]
+        public async Task DeleteConfirmed_GiveCorrectIdShouldDeleteClient()
+        {
+            Client client1 = new Client
+            {
+                FirstName = "Jan"
+            };
+
+            var repositoryMock = new ClientRepositoryMock();
+            var unitOfWorkMock = new UnitOfWorkMock();
+
+            var controller = new ClientController(repositoryMock, unitOfWorkMock);
+
+            await controller.Create(client1);
+
+            await controller.DeleteConfirmed(client1.ClientId);
+
+            IEnumerable<Client> resultList = await repositoryMock.GetAll();
+            var result = resultList.Count();
+
+            Assert.Equal(0, result);
+        }
+
+        [Fact]
+        public async Task DeleteConfirmed_GiveNotExistingIdReturnNotFoundView()
+        {
+            Client client1 = new Client
+            {
+                FirstName = "Jan"
+            };
+
+            var repositoryMock = new ClientRepositoryMock();
+            var unitOfWorkMock = new UnitOfWorkMock();
+
+            var controller = new ClientController(repositoryMock, unitOfWorkMock);
+
+            var result = controller.DeleteConfirmed("1");
+            var viewResult = await result as ViewResult;
+            Assert.Equal("NotFound", viewResult.ViewName);
+        }
     }
 }
+

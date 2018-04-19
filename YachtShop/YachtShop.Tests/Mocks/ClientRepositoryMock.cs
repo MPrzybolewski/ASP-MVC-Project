@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using YachtShop.Data.Repositories.Interfaces;
 using YachtShop.Models;
@@ -28,6 +29,10 @@ namespace YachtShop.Tests.Mocks
 
         public void Delete(Client client)
         {
+            if(client == null)
+            {
+                throw new Exception();
+            }
             clients.Remove(client.ClientId);
         }
 
@@ -44,7 +49,9 @@ namespace YachtShop.Tests.Mocks
 
         public async Task<Client> GetById(string id)
         {
-            var client = clients[id];
+            var client = clients.Where(e => e.Key == id)
+                .Select(e => e.Value)
+                .FirstOrDefault();
             return await Task.FromResult(client);
         }
 

@@ -68,6 +68,7 @@ namespace YachtShop
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
                 app.UseDatabaseErrorPage();
+                app.UseExceptionHandler("/Home/Error");
             }
             else
             {
@@ -76,7 +77,7 @@ namespace YachtShop
 
             app.UseStaticFiles();
             app.UseStatusCodePagesWithReExecute("/Client/Error", "?statusCode={0}");
-            app.UseRequestLocalization();
+
             app.UseAuthentication();
 
             app.UseMvc(routes =>
