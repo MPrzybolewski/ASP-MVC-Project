@@ -1,32 +1,12 @@
 ﻿<Properties StartupConfiguration="{EA001C70-D05F-4B6E-A6D9-6263CDB7997D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="YachtShop/Controllers/ClientController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="YachtShop.Tests/Mocks/ClientRepositoryMock.cs">
     <Files>
-      <File FileName="YachtShop.Tests/ClientControllerTests.cs" Line="303" Column="15" />
-      <File FileName="YachtShop/Controllers/ClientController.cs" Line="28" Column="38" />
-      <File FileName="YachtShop.Tests/Mocks/ClientRepositoryMock.cs" Line="54" Column="35" />
-      <File FileName="YachtShop.Tests/Mocks/UnitOfWorkMock.cs" Line="11" Column="20" />
-      <File FileName="YachtShop/Startup.cs" Line="79" Column="13" />
-      <File FileName="YachtShop.Tests/ClientTest.cs" Line="38" Column="57" />
-      <File FileName="YachtShop/Views/Shared/Error.cshtml" Line="23" Column="1" />
-      <File FileName="YachtShop/Models/ErrorViewModel.cs" Line="11" Column="2" />
+      <File FileName="YachtShop.Tests/ClientControllerTests.cs" Line="103" Column="10" />
+      <File FileName="YachtShop.Tests/ClientTest.cs" Line="51" Column="41" />
+      <File FileName="YachtShop/Startup.cs" Line="76" Column="14" />
+      <File FileName="YachtShop/Controllers/HomeController.cs" Line="18" Column="16" />
+      <File FileName="YachtShop.Tests/Mocks/ClientRepositoryMock.cs" Line="20" Column="48" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="YachtShop" expanded="True">
-            <Node name="YachtShop.Tests" expanded="True">
-              <Node name="YachtShop" expanded="True">
-                <Node name="Tests" expanded="True">
-                  <Node name="ClientControllerTests" expanded="True">
-                    <Node name="DeleteConfirmed_GiveNotExistingIdReturnNotFoundView" selected="True" />
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

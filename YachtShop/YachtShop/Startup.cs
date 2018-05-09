@@ -68,15 +68,14 @@ namespace YachtShop
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
                 app.UseDatabaseErrorPage();
-                app.UseExceptionHandler("/Home/Error");
+
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                 app.UseExceptionHandler("/Home/Error");
             }
 
             app.UseStaticFiles();
-            app.UseStatusCodePagesWithReExecute("/Client/Error", "?statusCode={0}");
 
             app.UseAuthentication();
 
@@ -86,8 +85,6 @@ namespace YachtShop
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-
-           // dbInitalizer.Seed();
         }
 
      

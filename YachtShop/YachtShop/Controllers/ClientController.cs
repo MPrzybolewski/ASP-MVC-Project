@@ -89,7 +89,6 @@ namespace YachtShop.Controllers
             {
                 return View("NotFound");
             }
-
             var client = await _clientRepository.GetById(id);
             if (client == null)
             {
