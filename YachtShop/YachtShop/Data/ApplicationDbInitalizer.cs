@@ -22,7 +22,7 @@ namespace YachtShop.Data
         public void Seed()
         {
             _context.Database.Migrate();
-
+                
             if (!_context.Roles.Any())
             {
                 var roleNames = new[]

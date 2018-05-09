@@ -14,7 +14,7 @@ using YachtShop.Models;
 
 namespace YachtShop.Controllers
 {
-    [Authorize(Roles = "Administrator, Seller")]
+    [AllowAnonymous]
     public class ClientController : Controller
     {
         private readonly IClientRepository _clientRepository;

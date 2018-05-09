@@ -8,17 +8,16 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 using YachtShop.Data;
 
-namespace YachtShop.Data.Migrations
+namespace YachtShop.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20171223145024_AddYachtModel")]
-    partial class AddYachtModel
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
+                .HasAnnotation("ProductVersion", "2.0.2-rtm-10011")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -202,6 +201,30 @@ namespace YachtShop.Data.Migrations
                     b.ToTable("Clients");
                 });
 
+            modelBuilder.Entity("YachtShop.Models.Purchase", b =>
+                {
+                    b.Property<string>("PurchaseId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ClientId");
+
+                    b.Property<DateTime>("PurchaseDate");
+
+                    b.Property<string>("SellerId");
+
+                    b.Property<string>("YachtId");
+
+                    b.HasKey("PurchaseId");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("SellerId");
+
+                    b.HasIndex("YachtId");
+
+                    b.ToTable("Purchases");
+                });
+
             modelBuilder.Entity("YachtShop.Models.Seller", b =>
                 {
                     b.Property<string>("SellerId")
@@ -231,9 +254,11 @@ namespace YachtShop.Data.Migrations
                     b.Property<string>("YachtId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<decimal>("Price");
 
@@ -285,6 +310,21 @@ namespace YachtShop.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("YachtShop.Models.Purchase", b =>
+                {
+                    b.HasOne("YachtShop.Models.Client", "Client")
+                        .WithMany("Purchases")
+                        .HasForeignKey("ClientId");
+
+                    b.HasOne("YachtShop.Models.Seller", "Seller")
+                        .WithMany("Purchases")
+                        .HasForeignKey("SellerId");
+
+                    b.HasOne("YachtShop.Models.Yacht", "Yacht")
+                        .WithMany("Purchases")
+                        .HasForeignKey("YachtId");
                 });
 #pragma warning restore 612, 618
         }

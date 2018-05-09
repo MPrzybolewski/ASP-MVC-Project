@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace YachtShop.Data.Migrations
+namespace YachtShop.Migrations
 {
-    public partial class AddColectionsToClientModelSellerModelYachtModel : Migration
+    public partial class uwaga1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
