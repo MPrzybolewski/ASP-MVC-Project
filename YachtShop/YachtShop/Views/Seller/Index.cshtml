@@ -1,31 +1,31 @@
 ﻿@model IEnumerable<YachtShop.Models.Seller>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Seller";
 }
 
-<h2>Index</h2>
+<h2 id="sellerPageIndexTitle">@ViewData["Title"]</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" id="createButton">Create New</a>
 </p>
 
 <table class="table">
     <thead>
         <tr>
-                <th>
+                <th id="firstNameCol">
                     @Html.DisplayNameFor(model => model.FirstName)
                 </th>
-                <th>
+                <th id="secondNameCol">
                     @Html.DisplayNameFor(model => model.SecondName)
                 </th>
-                <th>
+                <th id="salaryCol">
                     @Html.DisplayNameFor(model => model.Salary)
                 </th>
-                <th>
+                <th id="phoneNumberCol">
                     @Html.DisplayNameFor(model => model.PhoneNumber)
                 </th>
-                <th>
+                <th id="emailCol">
                     @Html.DisplayNameFor(model => model.Email)
                 </th>
             <th></th>

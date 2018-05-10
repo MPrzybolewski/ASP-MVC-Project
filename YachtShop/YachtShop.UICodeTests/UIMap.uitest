@@ -1,0 +1,3172 @@
+<?xml version="1.0"?>
+<UITest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Id="62001f8d-8863-44ff-9519-23fb5d14fb63" AssemblyVersion="15.0.26208.0" Version="1.0" xmlns="http://schemas.microsoft.com/VisualStudio/TeamTest/UITest/2010">
+  <Configuration>
+    <Group Name="IE">
+      <Setting Name="Version" Value="9.11.16299.0" WarningLevel="1" />
+      <Setting Name="InformationBar" WarningLevel="1" />
+      <Setting Name="AutoCompletePassword" WarningLevel="1" />
+      <Setting Name="AutoCompleteForm" Value="yes" WarningLevel="1" />
+      <Setting Name="DefaultBrowser" Value="IEXPLORE.EXE" WarningLevel="1" />
+      <Setting Name="PopupBlocker" Value="yes" WarningLevel="1" />
+      <Setting Name="TabbedBrowsing" WarningLevel="2" />
+      <Setting Name="InternetZoneSecurity" Value="66816" WarningLevel="2" />
+      <Setting Name="IntranetZoneSecurity" Value="69632" WarningLevel="2" />
+      <Setting Name="TrustedZoneSecurity" Value="70912" WarningLevel="2" />
+      <Setting Name="RestrictedZoneSecurity" Value="73728" WarningLevel="2" />
+      <Setting Name="PhishingFilter" WarningLevel="1" />
+      <Setting Name="EnhancedSecurityConfiguration" WarningLevel="1" />
+    </Group>
+    <Group Name="OS">
+      <Setting Name="Name" Value="Microsoft Windows 10 Education" WarningLevel="2" />
+      <Setting Name="Version" Value="Microsoft Windows NT 10.0.16299.0" WarningLevel="2" />
+      <Setting Name="IsUserAdmin" Value="False" WarningLevel="2" />
+      <Setting Name="Is64BitOperatingSystem" Value="True" WarningLevel="2" />
+      <Setting Name="IsTerminalServerSession" Value="False" WarningLevel="2" />
+      <Setting Name="OSLanguage" Value="1045" WarningLevel="1" />
+      <Setting Name="UserLocale" Value="1045" WarningLevel="1" />
+      <Setting Name="DragFullWindows" Value="True" WarningLevel="2" />
+      <Setting Name="ScreenResolutionWidth" Value="1920" WarningLevel="2" />
+      <Setting Name="ScreenResolutionHeight" Value="1080" WarningLevel="2" />
+      <Setting Name="SystemDPIX" Value="96" WarningLevel="2" />
+      <Setting Name="SystemDPIY" Value="96" WarningLevel="2" />
+      <Setting Name="Aero" Value="1" WarningLevel="1" />
+      <Setting Name="UACEnabled" Value="1" WarningLevel="2" />
+      <Setting Name="UACPromptEnabled" Value="5" WarningLevel="1" />
+    </Group>
+    <Group Name="TechnologyManagers" />
+  </Configuration>
+  <InitializeActions />
+  <ExecuteActions>
+    <NavigateToUrlAction UIObjectName="UIMap.UINowakartaInternetExpWindow">
+      <ParameterName />
+      <Url>about:NewsFeed</Url>
+      <NewInstance>true</NewInstance>
+    </NavigateToUrlAction>
+    <NavigateToUrlAction UIObjectName="UIMap.UINowakartaInternetExpWindow">
+      <ParameterName />
+      <Url>https://localhost:44373/</Url>
+      <NewInstance>false</NewInstance>
+    </NavigateToUrlAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="RunHomePage">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UINowakartaInternetExpWindow.UIHomePageYachtShopDocument.UILoginHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="18" Y="12" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickLogInTabButton">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <SetValueAction UIObjectName="UIMap.UILoginYachtShopInternWindow.UILoginYachtShopDocument.UIEmailEdit">
+      <ParameterName />
+      <Value Encoded="false">123@123.pl</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="AddAdminEmail">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <SetValueAction UIObjectName="UIMap.UILoginYachtShopInternWindow.UILoginYachtShopDocument.UIPasswordEdit">
+      <ParameterName />
+      <Value Encoded="true">A2RcPsxsl5ATiwB7aYvPzVij3YOpp1Qx</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="AddCorrectPassword">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UILoginYachtShopInternWindow.UILoginYachtShopDocument.UILoginButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="18" Y="9" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickLogInButton">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <StringAssertAction UIObjectName="UIMap.UINowakartaInternetExpWindow.UIHomePageYachtShopDocument.UIHello123123plEnjoymyPane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Hello 123@123.pl!</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Comparison>CurrentCulture</Comparison>
+      <PropertyCondition>Contains</PropertyCondition>
+    </StringAssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateWelcomeStringAfterLogin">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UINowakartaInternetExpWindow.UIHomePageYachtShopDocument.UILogoutFormCustom.UILogoutButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="31" Y="15" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="LogOut">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UINowakartaInternetExpWindow.UIHomePageYachtShopDocument.UISellersHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="42" Y="33" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="NavigateToSellerIndexPage">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UISellerYachtShopInterWindow.UISellerYachtShopDocument.UICreateNewHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="18" Y="5" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickCreateNewSeller">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <SetValueAction UIObjectName="UIMap.UICreateSellerYachtShoWindow.UICreateSellerYachtShoDocument.UIFirstNameEdit">
+      <ParameterName />
+      <Value Encoded="false">Patryk</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICreateSellerYachtShoWindow.UICreateSellerYachtShoDocument.UISecondNameEdit">
+      <ParameterName />
+      <Value Encoded="false">Milek</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICreateSellerYachtShoWindow.UICreateSellerYachtShoDocument.UISalaryEdit">
+      <ParameterName />
+      <Value Encoded="false">2000</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICreateSellerYachtShoWindow.UICreateSellerYachtShoDocument.UIPhoneNumberEdit">
+      <ParameterName />
+      <Value Encoded="false">123-123-123</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICreateSellerYachtShoWindow.UICreateSellerYachtShoDocument.UIEmailEdit">
+      <ParameterName />
+      <Value Encoded="false">patryk@milek.pl</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="AddCorrectSeller">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UICreateSellerYachtShoWindow.UICreateSellerYachtShoDocument.UICreateButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="25" Y="22" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickCreateNewSellerButton">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UISellerYachtShopInterWindow.UISellerYachtShopDocument.UIDetailsHyperlink1">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="20" Y="8" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickDetailSellerButton">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UIDetailsYachtShopInteWindow.UIDetailsYachtShopDocument.UIItemCustom">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>First Name Patryk Second Name Milek Salary 2000,00 Phone Number 123-123-123 Email patryk@milek.pl </ExpectedValue>
+      <MessageOnValidationFailure>wrong detail data</MessageOnValidationFailure>
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="VerifyDetailPage">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIDetailsYachtShopInteWindow.UIDetailsYachtShopDocument.UIEditHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="6" Y="6" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickEditSellerButton">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <SetValueAction UIObjectName="UIMap.UIEditYachtShopInterneWindow.UIEditYachtShopDocument.UIFirstNameEdit">
+      <ParameterName />
+      <Value Encoded="false">PatrykTest</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="EditSellerFirstName">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIEditYachtShopInterneWindow.UIEditYachtShopDocument.UISaveButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="11" Y="16" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="SaveEditSeller">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UISellerYachtShopInterWindow.UISellerYachtShopDocument.UIItemTable.UIPatrykTestCell">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>PatrykTest </ExpectedValue>
+      <MessageOnValidationFailure>wrong first name after edit</MessageOnValidationFailure>
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="VerifySellerFirstNameAfterEdit">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UISellerYachtShopInterWindow.UISellerYachtShopDocument.UIDeleteHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="26" Y="10" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClieckSellerDeleteButton">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIDeleteYachtShopInterWindow.UIDeleteYachtShopDocument.UIDeleteButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="22" Y="9" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickDeleteSellerButton">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UINowakartaInternetExpWindow.UIHomePageYachtShopDocument.UIRolesHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="18" Y="13" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickRoleTab">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UIRoleYachtShopInterneWindow.UIRoleYachtShopDocument.UIItemTable.UIItem123123plCell">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>123@123.pl</ExpectedValue>
+      <MessageOnValidationFailure>wrong email</MessageOnValidationFailure>
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateRoleEmail">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UIRoleYachtShopInterneWindow.UIRoleYachtShopDocument.UIItemTable.UIAdministratorCell">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Administrator</ExpectedValue>
+      <MessageOnValidationFailure>wrong role</MessageOnValidationFailure>
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateRole">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UISellerYachtShopInterWindow.UISellerYachtShopDocument.UIItemTable1.UIPatrykCell">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Patryk </ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateSellerFirstName">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UISellerYachtShopInterWindow.UISellerYachtShopDocument.UIItemTable1.UIMilekCell">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Milek </ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateSellerSecondName">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UISellerYachtShopInterWindow.UISellerYachtShopDocument.UIItemTable1.UIItem200000Cell">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>2000,00 </ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateSellerSalary">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UINowakartaInternetExpWindow.UIHomePageYachtShopDocument.UIYachtsHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="39" Y="29" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickYachtTab">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIIndexYachtShopInternWindow.UIIndexYachtShopDocument.UICreateNewHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="50" Y="10" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickCreateNewYacht">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument.UICreateButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="19" Y="19" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickCreateNewYachtButton">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument.UIEnterYachtnamePane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Enter Yacht name</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateNullYachtName">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument.UIThevalueisinvalidPane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>The value '' is invalid.</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateNullYachtPrice">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument.UIEnterYachtdescriptioPane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Enter Yacht description</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateNullYachtDescription">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument.UIPriceEdit">
+      <ParameterName />
+      <Value Encoded="false">asdf</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="PutWrongPrice">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument.UIThevalueasdfisnotvalPane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>The value 'asdf' is not valid for Price.</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateWrongPrice">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <NavigateToUrlAction UIObjectName="UIMap.UINowakartaInternetExpWindow1">
+      <ParameterName />
+      <Url>about:NewsFeed</Url>
+      <NewInstance>true</NewInstance>
+    </NavigateToUrlAction>
+    <NavigateToUrlAction UIObjectName="UIMap.UINowakartaInternetExpWindow2">
+      <ParameterName />
+      <Url>https://localhost:44373/seller</Url>
+      <NewInstance>false</NewInstance>
+    </NavigateToUrlAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="GoToSellerPage">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <StringAssertAction UIObjectName="UIMap.UILoginYachtShopInternWindow1.UIItemWindow.UIPasekadresuClient.UIAdresEdit">
+      <ParameterName />
+      <PropertyName>Text</PropertyName>
+      <ExpectedValue>localhost:44373/Account/Login</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Comparison>CurrentCulture</Comparison>
+      <PropertyCondition>Contains</PropertyCondition>
+    </StringAssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateLoginPageURL">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UILoginYachtShopInternWindow2.UILoginYachtShopDocument.UIHomeYachtsRegisterLoPane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>
+Home
+
+
+Yachts
+
+
+Register
+
+
+Log in</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateTabsForNotLoggedUser">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <StringAssertAction UIObjectName="UIMap.UISellerYachtShopInterWindow.UISellerYachtShopDocument.UIHomePurchasesClientsPane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>
+Home
+
+
+Purchases
+
+
+Clients
+
+
+Yachts
+
+
+Sellers
+
+
+Roles
+
+
+
+Hello 123@123.pl!
+
+Log out </ExpectedValue>
+      <MessageOnValidationFailure />
+      <Comparison>CurrentCulture</Comparison>
+      <PropertyCondition>Contains</PropertyCondition>
+    </StringAssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateTabsForAdmin">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UINowakartaInternetExpWindow.UIHomePageYachtShopDocument.UIClientsHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="16" Y="19" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickClientTab">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIIndexYachtShopInternWindow.UIIndexYachtShopDocument1.UICreateNewHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="28" Y="10" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickCreateNewClient">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UICreateButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="8" Y="16" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ClickCreateClientButton">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIEnterFirstNamePane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Enter First Name</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateNullClientFirstName">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIEnterSecondNamePane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Enter Second Name</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateNullClientSecondName">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIEnterPhoneNumberPane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Enter Phone Number</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateNullClientPhoneNumber">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIEnterEmailPane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Enter Email</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateNullClientEmail">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIPhoneNumberEdit">
+      <ParameterName />
+      <Value Encoded="false">123123123</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="TypeWronNumberWithoutDash">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIInvalidphonenumberfoPane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Invalid phone number format (use format: xxx-xxx-xxx).</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateIncorrectPhoneNumber">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIEmailEdit">
+      <ParameterName />
+      <Value Encoded="false">asdf</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="TypeWrongEmail">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIInvalidemailusepropePane">
+      <ParameterName />
+      <PropertyName>InnerText</PropertyName>
+      <ExpectedValue>Invalid email(use proper format).</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateIncorrectEmail">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIFirstNameEdit">
+      <ParameterName />
+      <Value Encoded="false">asdf</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UISecondNameEdit">
+      <ParameterName />
+      <Value Encoded="false">asdf</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIPhoneNumberEdit">
+      <ParameterName />
+      <Value Encoded="false">123-123-123</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIEmailEdit">
+      <ParameterName />
+      <Value Encoded="false">asdf@asdf.pl</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="AddCorectDataForClient">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIFirstNameEdit">
+      <ParameterName />
+      <Value Encoded="false">asdf</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UISecondNameEdit">
+      <ParameterName />
+      <Value Encoded="false">asdf</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIPhoneNumberEdit">
+      <ParameterName />
+      <Value Encoded="false">123-123-123</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICreateYachtShopInterWindow.UICreateYachtShopDocument1.UIEmailEdit">
+      <ParameterName />
+      <Value Encoded="false">asdf@asdf.pl</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="AddCorrectClientData">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UILoginYachtShopInternWindow1.UIItemWindow.UIPasekadresuClient.UIAdresEdit">
+      <ParameterName />
+      <PropertyName>Text</PropertyName>
+      <ExpectedValue>https://localhost:44373/client</ExpectedValue>
+      <MessageOnValidationFailure />
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ValidateClientIndexPage">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
+    <MouseAction UIObjectName="UIMap.UIIndexYachtShopInternWindow.UIIndexYachtShopDocument1.UIDeleteHyperlink">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="23" Y="5" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <MouseAction UIObjectName="UIMap.UIIndexYachtShopInternWindow1.UIDeleteYachtShopDocument.UIDeleteButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="24" Y="13" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="DeleteClient">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+  </ExecuteActions>
+  <CleanupActions />
+  <OnErrorActions />
+  <Maps>
+    <UIMap Id="UIMap">
+      <TopLevelWindows>
+        <TopLevelWindow ControlType="Window" Id="UINowakartaInternetExpWindow" FriendlyName="Nowa karta - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="1575358">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Nowa karta</WindowTitle>
+            <WindowTitle>Home Page - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Nowa karta</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UIHomePageYachtShopDocument" FriendlyName="Home Page - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Home Page - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Home Page - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Hyperlink" Id="UILoginHyperlink" FriendlyName="Log in" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Home Page - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id">loginButton</PropertyCondition>
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Log in</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/account/login</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/account/login</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">id="loginButton" href="/account/login"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">5</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIHello123123plEnjoymyPane" FriendlyName="Hello 123@123.pl! Enjoy my applicatio" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Home Page - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">DIV</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Hello 123@123.pl!
+
+Enjoy my applicatio</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">row</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="row"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">13</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Custom" Id="UILogoutFormCustom" FriendlyName="logoutForm" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Home Page - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Custom</PropertyCondition>
+                      <PropertyCondition Name="TagName">FORM</PropertyCondition>
+                      <PropertyCondition Name="Id">logoutForm</PropertyCondition>
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="Class">navbar-right</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="navbar-right" id="logoutForm" act</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">1</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants>
+                    <UIObject ControlType="Button" Id="UILogoutButton" FriendlyName="Log out" SpecialControlType="None">
+                      <TechnologyName>Web</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Home Page - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <AndCondition Id="SearchCondition">
+                        <AndCondition Id="Primary">
+                          <PropertyCondition Name="ControlType">Button</PropertyCondition>
+                          <PropertyCondition Name="TagName">BUTTON</PropertyCondition>
+                          <PropertyCondition Name="Id" />
+                          <PropertyCondition Name="Name" />
+                          <PropertyCondition Name="DisplayText">Log out</PropertyCondition>
+                          <PropertyCondition Name="Type">submit</PropertyCondition>
+                        </AndCondition>
+                        <FilterCondition Id="Secondary">
+                          <PropertyCondition Name="Title" />
+                          <PropertyCondition Name="Class">btn btn-link navbar-btn navbar-link</PropertyCondition>
+                          <PropertyCondition Name="ControlDefinition">class="btn btn-link navbar-btn navbar-li</PropertyCondition>
+                          <PropertyCondition Name="TagInstance">1</PropertyCondition>
+                        </FilterCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                  </Descendants>
+                </UIObject>
+                <UIObject ControlType="Hyperlink" Id="UISellersHyperlink" FriendlyName="Sellers" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Home Page - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id">sellerTab</PropertyCondition>
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Sellers</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/seller</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/seller</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">id="sellerTab" href="/seller"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">6</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Hyperlink" Id="UIRolesHyperlink" FriendlyName="Roles" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Home Page - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id">roleTab</PropertyCondition>
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Roles</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/role</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/role</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">id="roleTab" href="/role"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">7</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Hyperlink" Id="UIYachtsHyperlink" FriendlyName="Yachts" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Home Page - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id">yachtTab</PropertyCondition>
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Yachts</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/yacht</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/yacht</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">id="yachtTab" href="/yacht"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">5</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Hyperlink" Id="UIClientsHyperlink" FriendlyName="Clients" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Home Page - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id">clientTab</PropertyCondition>
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Clients</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/client</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/client</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">id="clientTab" href="/client"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">4</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UILoginYachtShopInternWindow" FriendlyName="Log in - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="1575358">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Log in - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Log in - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UILoginYachtShopDocument" FriendlyName="Log in - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Log in - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Log in - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/account/login</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/account/login</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UIEmailEdit" FriendlyName="Email" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Log in - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">Email</PropertyCondition>
+                      <PropertyCondition Name="Name">Email</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">Email</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="Email" class="form-control" id="Em</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">1</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Edit" Id="UIPasswordEdit" FriendlyName="Password" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Log in - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">Password</PropertyCondition>
+                      <PropertyCondition Name="Name">Password</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">Password</PropertyCondition>
+                      <PropertyCondition Name="Type">PASSWORD</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="Password" class="form-control" id=</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">2</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Button" Id="UILoginButton" FriendlyName="Log in" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Log in - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Button</PropertyCondition>
+                      <PropertyCondition Name="TagName">BUTTON</PropertyCondition>
+                      <PropertyCondition Name="Id">loginButtonForm</PropertyCondition>
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="DisplayText">Log in</PropertyCondition>
+                      <PropertyCondition Name="Type">submit</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">btn btn-default</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="btn btn-default" id="loginButtonF</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">2</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UISellerYachtShopInterWindow" FriendlyName="Seller - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="329824">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Seller - YachtShop</WindowTitle>
+            <WindowTitle>Log in - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Seller - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UISellerYachtShopDocument" FriendlyName="Seller - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Seller - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Seller - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/seller</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/seller</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Hyperlink" Id="UICreateNewHyperlink" FriendlyName="Create New" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id">createButton</PropertyCondition>
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Create New</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/seller/create</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/seller/create</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">id="createButton" href="/seller/create"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">9</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Table" Id="UIItemTable" FriendlyName="" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Table</PropertyCondition>
+                      <PropertyCondition Name="TagName">TABLE</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">First Name 
+
+Second Name 
+
+Salary 
+</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="table"</PropertyCondition>
+                      <PropertyCondition Name="RowCount">4</PropertyCondition>
+                      <PropertyCondition Name="ColumnCount">6</PropertyCondition>
+                      <PropertyCondition Name="Class">table</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">1</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants>
+                    <UIObject ControlType="Cell" Id="UIPatrykCell" FriendlyName="Patryk" SpecialControlType="None">
+                      <TechnologyName>Web</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Seller - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <AndCondition Id="SearchCondition">
+                        <AndCondition Id="Primary">
+                          <PropertyCondition Name="ControlType">Cell</PropertyCondition>
+                          <PropertyCondition Name="TagName">TD</PropertyCondition>
+                          <PropertyCondition Name="Id" />
+                          <PropertyCondition Name="Name" />
+                          <PropertyCondition Name="MaxDepth">3</PropertyCondition>
+                          <PropertyCondition Name="InnerText">Patryk </PropertyCondition>
+                        </AndCondition>
+                        <FilterCondition Id="Secondary">
+                          <PropertyCondition Name="ControlDefinition" />
+                          <PropertyCondition Name="RowIndex">2</PropertyCondition>
+                          <PropertyCondition Name="ColumnIndex">0</PropertyCondition>
+                          <PropertyCondition Name="Class" />
+                          <PropertyCondition Name="TagInstance">7</PropertyCondition>
+                        </FilterCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Cell" Id="UIMilekCell" FriendlyName="Milek" SpecialControlType="None">
+                      <TechnologyName>Web</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Seller - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <AndCondition Id="SearchCondition">
+                        <AndCondition Id="Primary">
+                          <PropertyCondition Name="ControlType">Cell</PropertyCondition>
+                          <PropertyCondition Name="TagName">TD</PropertyCondition>
+                          <PropertyCondition Name="Id" />
+                          <PropertyCondition Name="Name" />
+                          <PropertyCondition Name="MaxDepth">3</PropertyCondition>
+                          <PropertyCondition Name="InnerText">Milek </PropertyCondition>
+                        </AndCondition>
+                        <FilterCondition Id="Secondary">
+                          <PropertyCondition Name="ControlDefinition" />
+                          <PropertyCondition Name="RowIndex">2</PropertyCondition>
+                          <PropertyCondition Name="ColumnIndex">1</PropertyCondition>
+                          <PropertyCondition Name="Class" />
+                          <PropertyCondition Name="TagInstance">8</PropertyCondition>
+                        </FilterCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Cell" Id="UIItem200000Cell" FriendlyName="2000,00" SpecialControlType="None">
+                      <TechnologyName>Web</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Seller - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <AndCondition Id="SearchCondition">
+                        <AndCondition Id="Primary">
+                          <PropertyCondition Name="ControlType">Cell</PropertyCondition>
+                          <PropertyCondition Name="TagName">TD</PropertyCondition>
+                          <PropertyCondition Name="Id" />
+                          <PropertyCondition Name="Name" />
+                          <PropertyCondition Name="MaxDepth">3</PropertyCondition>
+                          <PropertyCondition Name="InnerText">2000,00 </PropertyCondition>
+                        </AndCondition>
+                        <FilterCondition Id="Secondary">
+                          <PropertyCondition Name="ControlDefinition" />
+                          <PropertyCondition Name="RowIndex">2</PropertyCondition>
+                          <PropertyCondition Name="ColumnIndex">2</PropertyCondition>
+                          <PropertyCondition Name="Class" />
+                          <PropertyCondition Name="TagInstance">9</PropertyCondition>
+                        </FilterCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Cell" Id="UIPatrykTestCell" FriendlyName="PatrykTest" SpecialControlType="None">
+                      <TechnologyName>Web</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Seller - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <AndCondition Id="SearchCondition">
+                        <AndCondition Id="Primary">
+                          <PropertyCondition Name="ControlType">Cell</PropertyCondition>
+                          <PropertyCondition Name="TagName">TD</PropertyCondition>
+                          <PropertyCondition Name="Id" />
+                          <PropertyCondition Name="Name" />
+                          <PropertyCondition Name="MaxDepth">3</PropertyCondition>
+                          <PropertyCondition Name="InnerText">PatrykTest </PropertyCondition>
+                        </AndCondition>
+                        <FilterCondition Id="Secondary">
+                          <PropertyCondition Name="ControlDefinition" />
+                          <PropertyCondition Name="RowIndex">2</PropertyCondition>
+                          <PropertyCondition Name="ColumnIndex">0</PropertyCondition>
+                          <PropertyCondition Name="Class" />
+                          <PropertyCondition Name="TagInstance">7</PropertyCondition>
+                        </FilterCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                  </Descendants>
+                </UIObject>
+                <UIObject ControlType="Hyperlink" Id="UIDetailsHyperlink" FriendlyName="Details" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Details</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/seller/details/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/seller/details/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">href="/seller/details/7e1adbd2-e892-4141</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">14</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Hyperlink" Id="UIDeleteHyperlink" FriendlyName="Delete" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Delete</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/seller/delete/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/seller/delete/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">href="/seller/delete/7e1adbd2-e892-4141-</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">15</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Table" Id="UIItemTable1" FriendlyName="" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Table</PropertyCondition>
+                      <PropertyCondition Name="TagName">TABLE</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">First Name 
+
+Second Name 
+
+Salary 
+</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="table"</PropertyCondition>
+                      <PropertyCondition Name="RowCount">2</PropertyCondition>
+                      <PropertyCondition Name="ColumnCount">6</PropertyCondition>
+                      <PropertyCondition Name="Class">table</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">1</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants>
+                    <UIObject ControlType="Cell" Id="UIPatrykCell" FriendlyName="Patryk" SpecialControlType="None">
+                      <TechnologyName>Web</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Seller - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <AndCondition Id="SearchCondition">
+                        <AndCondition Id="Primary">
+                          <PropertyCondition Name="ControlType">Cell</PropertyCondition>
+                          <PropertyCondition Name="TagName">TD</PropertyCondition>
+                          <PropertyCondition Name="Id" />
+                          <PropertyCondition Name="Name" />
+                          <PropertyCondition Name="MaxDepth">3</PropertyCondition>
+                          <PropertyCondition Name="InnerText">Patryk </PropertyCondition>
+                        </AndCondition>
+                        <FilterCondition Id="Secondary">
+                          <PropertyCondition Name="ControlDefinition" />
+                          <PropertyCondition Name="RowIndex">1</PropertyCondition>
+                          <PropertyCondition Name="ColumnIndex">0</PropertyCondition>
+                          <PropertyCondition Name="Class" />
+                          <PropertyCondition Name="TagInstance">1</PropertyCondition>
+                        </FilterCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Cell" Id="UIMilekCell" FriendlyName="Milek" SpecialControlType="None">
+                      <TechnologyName>Web</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Seller - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <AndCondition Id="SearchCondition">
+                        <AndCondition Id="Primary">
+                          <PropertyCondition Name="ControlType">Cell</PropertyCondition>
+                          <PropertyCondition Name="TagName">TD</PropertyCondition>
+                          <PropertyCondition Name="Id" />
+                          <PropertyCondition Name="Name" />
+                          <PropertyCondition Name="MaxDepth">3</PropertyCondition>
+                          <PropertyCondition Name="InnerText">Milek </PropertyCondition>
+                        </AndCondition>
+                        <FilterCondition Id="Secondary">
+                          <PropertyCondition Name="ControlDefinition" />
+                          <PropertyCondition Name="RowIndex">1</PropertyCondition>
+                          <PropertyCondition Name="ColumnIndex">1</PropertyCondition>
+                          <PropertyCondition Name="Class" />
+                          <PropertyCondition Name="TagInstance">2</PropertyCondition>
+                        </FilterCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Cell" Id="UIItem200000Cell" FriendlyName="2000,00" SpecialControlType="None">
+                      <TechnologyName>Web</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Seller - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <AndCondition Id="SearchCondition">
+                        <AndCondition Id="Primary">
+                          <PropertyCondition Name="ControlType">Cell</PropertyCondition>
+                          <PropertyCondition Name="TagName">TD</PropertyCondition>
+                          <PropertyCondition Name="Id" />
+                          <PropertyCondition Name="Name" />
+                          <PropertyCondition Name="MaxDepth">3</PropertyCondition>
+                          <PropertyCondition Name="InnerText">2000,00 </PropertyCondition>
+                        </AndCondition>
+                        <FilterCondition Id="Secondary">
+                          <PropertyCondition Name="ControlDefinition" />
+                          <PropertyCondition Name="RowIndex">1</PropertyCondition>
+                          <PropertyCondition Name="ColumnIndex">2</PropertyCondition>
+                          <PropertyCondition Name="Class" />
+                          <PropertyCondition Name="TagInstance">3</PropertyCondition>
+                        </FilterCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                  </Descendants>
+                </UIObject>
+                <UIObject ControlType="Hyperlink" Id="UIDetailsHyperlink1" FriendlyName="Details" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Details</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/seller/details/4bfa92e1-3496-49f1-94da-09a96f21d722</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/seller/details/4bfa92e1-3496-49f1-94da-09a96f21d722</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">href="/seller/details/4bfa92e1-3496-49f1</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">11</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIHomePurchasesClientsPane" FriendlyName="Home Purchases Clients Ya" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">DIV</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Home
+
+
+Purchases
+
+
+Clients
+
+
+Ya</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">navbar-collapse collapse</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="navbar-collapse collapse"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">3</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UICreateSellerYachtShoWindow" FriendlyName="Create Seller - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="329824">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Create Seller - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Create Seller - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UICreateSellerYachtShoDocument" FriendlyName="Create Seller - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Create Seller - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Create Seller - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/seller/create</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/seller/create</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UIFirstNameEdit" FriendlyName="First Name" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">FirstName</PropertyCondition>
+                      <PropertyCondition Name="Name">FirstName</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">First Name</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="FirstName" class="form-control" id</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">2</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Edit" Id="UISecondNameEdit" FriendlyName="Second Name" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">SecondName</PropertyCondition>
+                      <PropertyCondition Name="Name">SecondName</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">Second Name</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="SecondName" class="form-control" i</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">3</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Edit" Id="UISalaryEdit" FriendlyName="Salary" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">Salary</PropertyCondition>
+                      <PropertyCondition Name="Name">Salary</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">Salary</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="Salary" class="form-control" id="S</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">4</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Edit" Id="UIPhoneNumberEdit" FriendlyName="Phone Number" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">PhoneNumber</PropertyCondition>
+                      <PropertyCondition Name="Name">PhoneNumber</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">Phone Number</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="PhoneNumber" class="form-control" </PropertyCondition>
+                      <PropertyCondition Name="TagInstance">5</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Edit" Id="UIEmailEdit" FriendlyName="Email" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">Email</PropertyCondition>
+                      <PropertyCondition Name="Name">Email</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">Email</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="Email" class="form-control" id="Em</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">6</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Button" Id="UICreateButton" FriendlyName="Create" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create Seller - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Button</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">createButton</PropertyCondition>
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="DisplayText">Create</PropertyCondition>
+                      <PropertyCondition Name="Type">submit</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">btn btn-default</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="btn btn-default" id="createButton</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">7</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIDetailsYachtShopInteWindow" FriendlyName="Details - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="329824">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Details - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Details - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>1</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UIDetailsYachtShopDocument" FriendlyName="Details - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Details - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Details - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/seller/details/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/seller/details/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Custom" Id="UIItemCustom" FriendlyName="" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Details - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Custom</PropertyCondition>
+                      <PropertyCondition Name="TagName">DL</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="Class">dl-horizontal</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="dl-horizontal"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">1</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Hyperlink" Id="UIEditHyperlink" FriendlyName="Edit" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Details - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Edit</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/seller/edit/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/seller/edit/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">href="/seller/edit/7e1adbd2-e892-4141-8e</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">9</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIEditYachtShopInterneWindow" FriendlyName="Edit - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="329824">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Edit - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Edit - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UIEditYachtShopDocument" FriendlyName="Edit - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Edit - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Edit - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/seller/edit/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/seller/edit/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Edit" Id="UIFirstNameEdit" FriendlyName="First Name" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Edit - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">FirstName</PropertyCondition>
+                      <PropertyCondition Name="Name">FirstName</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">First Name</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="FirstName" class="form-control" id</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">3</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Button" Id="UISaveButton" FriendlyName="Save" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Edit - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Button</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="DisplayText">Save</PropertyCondition>
+                      <PropertyCondition Name="Type">submit</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">btn btn-default</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="btn btn-default" type="submit" va</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">8</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIDeleteYachtShopInterWindow" FriendlyName="Delete - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="329824">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Delete - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Delete - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UIDeleteYachtShopDocument" FriendlyName="Delete - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Delete - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Delete - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/seller/delete/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/seller/delete/7e1adbd2-e892-4141-8eed-312e2f447ad3</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Button" Id="UIDeleteButton" FriendlyName="Delete" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Delete - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Button</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="DisplayText">Delete</PropertyCondition>
+                      <PropertyCondition Name="Type">submit</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">btn btn-default</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="btn btn-default" type="submit" va</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">3</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIRoleYachtShopInterneWindow" FriendlyName="Role - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="3999650">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Role - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Role - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>1</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UIRoleYachtShopDocument" FriendlyName="Role - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Role - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Role - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/role</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/role</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Table" Id="UIItemTable" FriendlyName="" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Role - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Table</PropertyCondition>
+                      <PropertyCondition Name="TagName">TABLE</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Email 
+
+Roles 
+
+
+
+test@test.pl
+
+</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="table table-hover"</PropertyCondition>
+                      <PropertyCondition Name="RowCount">7</PropertyCondition>
+                      <PropertyCondition Name="ColumnCount">2</PropertyCondition>
+                      <PropertyCondition Name="Class">table table-hover</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">1</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants>
+                    <UIObject ControlType="Cell" Id="UIItem123123plCell" FriendlyName="123@123.pl" SpecialControlType="None">
+                      <TechnologyName>Web</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Role - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <AndCondition Id="SearchCondition">
+                        <AndCondition Id="Primary">
+                          <PropertyCondition Name="ControlType">Cell</PropertyCondition>
+                          <PropertyCondition Name="TagName">TD</PropertyCondition>
+                          <PropertyCondition Name="Id" />
+                          <PropertyCondition Name="Name" />
+                          <PropertyCondition Name="MaxDepth">3</PropertyCondition>
+                          <PropertyCondition Name="InnerText">123@123.pl</PropertyCondition>
+                        </AndCondition>
+                        <FilterCondition Id="Secondary">
+                          <PropertyCondition Name="ControlDefinition" />
+                          <PropertyCondition Name="RowIndex">4</PropertyCondition>
+                          <PropertyCondition Name="ColumnIndex">0</PropertyCondition>
+                          <PropertyCondition Name="Class" />
+                          <PropertyCondition Name="TagInstance">7</PropertyCondition>
+                        </FilterCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                    <UIObject ControlType="Cell" Id="UIAdministratorCell" FriendlyName="Administrator" SpecialControlType="None">
+                      <TechnologyName>Web</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Role - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <AndCondition Id="SearchCondition">
+                        <AndCondition Id="Primary">
+                          <PropertyCondition Name="ControlType">Cell</PropertyCondition>
+                          <PropertyCondition Name="TagName">TD</PropertyCondition>
+                          <PropertyCondition Name="Id" />
+                          <PropertyCondition Name="Name" />
+                          <PropertyCondition Name="MaxDepth">3</PropertyCondition>
+                          <PropertyCondition Name="InnerText">Administrator</PropertyCondition>
+                        </AndCondition>
+                        <FilterCondition Id="Secondary">
+                          <PropertyCondition Name="ControlDefinition" />
+                          <PropertyCondition Name="RowIndex">4</PropertyCondition>
+                          <PropertyCondition Name="ColumnIndex">1</PropertyCondition>
+                          <PropertyCondition Name="Class" />
+                          <PropertyCondition Name="TagInstance">8</PropertyCondition>
+                        </FilterCondition>
+                      </AndCondition>
+                      <SupportLevel>0</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                  </Descendants>
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIIndexYachtShopInternWindow" FriendlyName="Index - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="592474">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Index - YachtShop</WindowTitle>
+            <WindowTitle>Delete - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Index - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UIIndexYachtShopDocument" FriendlyName="Index - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Index - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Index - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/yacht</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/yacht</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Hyperlink" Id="UICreateNewHyperlink" FriendlyName="Create New" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Index - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Create New</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/yacht/create</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/yacht/create</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">href="/yacht/create"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">9</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Document" Id="UIIndexYachtShopDocument1" FriendlyName="Index - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Index - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Index - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/client</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/client</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Hyperlink" Id="UICreateNewHyperlink" FriendlyName="Create New" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Index - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Create New</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/client/create</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/client/create</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">href="/client/create"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">9</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Hyperlink" Id="UIDeleteHyperlink" FriendlyName="Delete" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Index - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Hyperlink</PropertyCondition>
+                      <PropertyCondition Name="TagName">A</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="Target" />
+                      <PropertyCondition Name="InnerText">Delete</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="AbsolutePath">/client/delete/82c3422f-4a77-4257-91f0-11220d60cf35</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Href">https://localhost:44373/client/delete/82c3422f-4a77-4257-91f0-11220d60cf35</PropertyCondition>
+                      <PropertyCondition Name="Class" />
+                      <PropertyCondition Name="ControlDefinition">href="/client/delete/82c3422f-4a77-4257-</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">12</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UICreateYachtShopInterWindow" FriendlyName="Create - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="592474">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Create - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Create - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UICreateYachtShopDocument" FriendlyName="Create - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Create - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Create - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/yacht/create</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/yacht/create</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Button" Id="UICreateButton" FriendlyName="Create" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Button</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="DisplayText">Create</PropertyCondition>
+                      <PropertyCondition Name="Type">submit</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">btn btn-default</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="btn btn-default" type="submit" va</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">5</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIEnterYachtnamePane" FriendlyName="Enter Yacht name" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">SPAN</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Enter Yacht name</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">text-danger field-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="Name"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">5</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIThevalueisinvalidPane" FriendlyName="The value '' is invalid." SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">SPAN</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">The value '' is invalid.</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">text-danger field-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="Price"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">6</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIEnterYachtdescriptioPane" FriendlyName="Enter Yacht description" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">SPAN</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Enter Yacht description</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">text-danger field-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="Description"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">7</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Edit" Id="UIPriceEdit" FriendlyName="Price" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">Price</PropertyCondition>
+                      <PropertyCondition Name="Name">Price</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">Price</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control input-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="Price" class="form-control input-v</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">3</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIThevalueasdfisnotvalPane" FriendlyName="The value 'asdf' is not valid for Price." SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">SPAN</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">The value 'asdf' is not valid for Price.</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">text-danger field-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="Price"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">6</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Document" Id="UICreateYachtShopDocument1" FriendlyName="Create - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Create - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Create - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/client/create</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/client/create</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Button" Id="UICreateButton" FriendlyName="Create" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Button</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="DisplayText">Create</PropertyCondition>
+                      <PropertyCondition Name="Type">submit</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">btn btn-default</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="btn btn-default" type="submit" va</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">6</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIEnterFirstNamePane" FriendlyName="Enter First Name" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">SPAN</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Enter First Name</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">text-danger field-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="FirstName"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">5</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIEnterSecondNamePane" FriendlyName="Enter Second Name" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">SPAN</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Enter Second Name</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">text-danger field-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="SecondName"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">6</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIEnterPhoneNumberPane" FriendlyName="Enter Phone Number" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">SPAN</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Enter Phone Number</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">text-danger field-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="PhoneNumber"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">7</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIEnterEmailPane" FriendlyName="Enter Email" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">SPAN</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Enter Email</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">text-danger field-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="Email"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">8</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Edit" Id="UIPhoneNumberEdit" FriendlyName="Phone Number" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">PhoneNumber</PropertyCondition>
+                      <PropertyCondition Name="Name">PhoneNumber</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">Phone Number</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control input-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="PhoneNumber" class="form-control i</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">4</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIInvalidphonenumberfoPane" FriendlyName="Invalid phone number format (use format:" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">SPAN</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Invalid phone number format (use format:</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">text-danger field-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="PhoneNumber"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">7</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Edit" Id="UIEmailEdit" FriendlyName="Email" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">Email</PropertyCondition>
+                      <PropertyCondition Name="Name">Email</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">Email</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control input-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="Email" class="form-control input-v</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">5</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Pane" Id="UIInvalidemailusepropePane" FriendlyName="Invalid email(use proper format)." SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">SPAN</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Invalid email(use proper format).</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">text-danger field-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="text-danger field-validation-error" data-valmsg-replace="true" data-valmsg-for="Email"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">8</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Edit" Id="UIFirstNameEdit" FriendlyName="First Name" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">FirstName</PropertyCondition>
+                      <PropertyCondition Name="Name">FirstName</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">First Name</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control input-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="FirstName" class="form-control inp</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">2</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+                <UIObject ControlType="Edit" Id="UISecondNameEdit" FriendlyName="Second Name" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Create - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id">SecondName</PropertyCondition>
+                      <PropertyCondition Name="Name">SecondName</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="LabeledBy">Second Name</PropertyCondition>
+                      <PropertyCondition Name="Type">SINGLELINE</PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">form-control input-validation-error</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">name="SecondName" class="form-control in</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">3</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UINowakartaInternetExpWindow1" FriendlyName="Nowa karta - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="1509858">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Nowa karta</WindowTitle>
+            <WindowTitle>Log in - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Nowa karta</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants />
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UINowakartaInternetExpWindow2" FriendlyName="Nowa karta - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="1509858">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Nowa karta</WindowTitle>
+            <WindowTitle>Log in - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Nowa karta</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants />
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UILoginYachtShopInternWindow1" FriendlyName="Log in - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="1509858">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Log in - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Log in - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>1</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Window" Id="UIItemWindow" FriendlyName="" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Log in - YachtShop</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ClassName">AddressDisplay Control</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>1</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Client" Id="UIPasekadresuClient" FriendlyName="Pasek adresu" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Log in - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="ControlType">Client</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>1</SupportLevel>
+                  <Descendants>
+                    <UIObject ControlType="Edit" Id="UIAdresEdit" FriendlyName="Adres" SpecialControlType="None">
+                      <TechnologyName>MSAA</TechnologyName>
+                      <WindowTitles>
+                        <WindowTitle>Log in - YachtShop</WindowTitle>
+                      </WindowTitles>
+                      <SearchConfigurations>
+                        <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                      </SearchConfigurations>
+                      <AndCondition Id="SearchCondition">
+                        <PropertyCondition Name="Name">Adres</PropertyCondition>
+                        <PropertyCondition Name="ControlType">Edit</PropertyCondition>
+                      </AndCondition>
+                      <SupportLevel>1</SupportLevel>
+                      <Descendants />
+                    </UIObject>
+                  </Descendants>
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UILoginYachtShopInternWindow2" FriendlyName="Log in - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="1509858">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Log in - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Log in - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>1</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UILoginYachtShopDocument" FriendlyName="Log in - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Log in - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Log in - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/Account/Login</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/Account/Login?ReturnUrl=%2Fseller</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Pane" Id="UIHomeYachtsRegisterLoPane" FriendlyName="Home Yachts Register Log " SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Log in - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Pane</PropertyCondition>
+                      <PropertyCondition Name="TagName">DIV</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="InnerText">Home
+
+
+Yachts
+
+
+Register
+
+
+Log </PropertyCondition>
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">navbar-collapse collapse</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="navbar-collapse collapse"</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">3</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+        <TopLevelWindow ControlType="Window" Id="UIIndexYachtShopInternWindow1" FriendlyName="Index - YachtShop - Internet Explorer" SpecialControlType="BrowserWindow" SessionId="1509858">
+          <TechnologyName>MSAA</TechnologyName>
+          <WindowTitles>
+            <WindowTitle>Index - YachtShop</WindowTitle>
+            <WindowTitle>Delete - YachtShop</WindowTitle>
+          </WindowTitles>
+          <SearchConfigurations>
+            <SearchConfiguration>VisibleOnly</SearchConfiguration>
+          </SearchConfigurations>
+          <AndCondition Id="SearchCondition">
+            <PropertyCondition Name="Name">Index - YachtShop</PropertyCondition>
+            <PropertyCondition Name="ClassName">IEFrame</PropertyCondition>
+            <PropertyCondition Name="ControlType">Window</PropertyCondition>
+          </AndCondition>
+          <SupportLevel>0</SupportLevel>
+          <Descendants>
+            <UIObject ControlType="Document" Id="UIDeleteYachtShopDocument" FriendlyName="Delete - YachtShop" SpecialControlType="None">
+              <TechnologyName>Web</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Delete - YachtShop</WindowTitle>
+              </WindowTitles>
+              <AndCondition Id="SearchCondition">
+                <AndCondition Id="Primary">
+                  <PropertyCondition Name="ControlType">Document</PropertyCondition>
+                  <PropertyCondition Name="TagName">BODY</PropertyCondition>
+                  <PropertyCondition Name="Id" />
+                  <PropertyCondition Name="RedirectingPage">False</PropertyCondition>
+                  <PropertyCondition Name="FrameDocument">False</PropertyCondition>
+                </AndCondition>
+                <FilterCondition Id="Secondary">
+                  <PropertyCondition Name="Title">Delete - YachtShop</PropertyCondition>
+                  <PropertyCondition Name="AbsolutePath">/client/delete/82c3422f-4a77-4257-91f0-11220d60cf35</PropertyCondition>
+                  <PropertyCondition Name="PageUrl">https://localhost:44373/client/delete/82c3422f-4a77-4257-91f0-11220d60cf35</PropertyCondition>
+                </FilterCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Button" Id="UIDeleteButton" FriendlyName="Delete" SpecialControlType="None">
+                  <TechnologyName>Web</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Delete - YachtShop</WindowTitle>
+                  </WindowTitles>
+                  <AndCondition Id="SearchCondition">
+                    <AndCondition Id="Primary">
+                      <PropertyCondition Name="ControlType">Button</PropertyCondition>
+                      <PropertyCondition Name="TagName">INPUT</PropertyCondition>
+                      <PropertyCondition Name="Id" />
+                      <PropertyCondition Name="Name" />
+                      <PropertyCondition Name="DisplayText">Delete</PropertyCondition>
+                      <PropertyCondition Name="Type">submit</PropertyCondition>
+                    </AndCondition>
+                    <FilterCondition Id="Secondary">
+                      <PropertyCondition Name="Title" />
+                      <PropertyCondition Name="Class">btn btn-default</PropertyCondition>
+                      <PropertyCondition Name="ControlDefinition">class="btn btn-default" type="submit" va</PropertyCondition>
+                      <PropertyCondition Name="TagInstance">3</PropertyCondition>
+                    </FilterCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+          </Descendants>
+        </TopLevelWindow>
+      </TopLevelWindows>
+    </UIMap>
+  </Maps>
+  <ValueMap>
+    <ParameterList />
+  </ValueMap>
+</UITest>
